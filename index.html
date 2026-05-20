@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>服务导航 | 欧美</title>
+  <meta name="description" content="官方入口与备用通道，实时延迟展示。" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta http-equiv="referrer" content="same-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <style>
+    :root{ --bg:#0b0c10; --card:#121318; --muted:#9aa0a6; --text:#e8eaed; --brand:#6aa2ff; --accent:#7df4c8; --border:#1f2129; --shadow: rgba(0,0,0,.35); --warn:#ffd166; --bad:#ff7b7b; --good:#7df4c8; }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background:linear-gradient(180deg,#0a0b10,#0d0f15 40%,#0a0b10); color:var(--text); }
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .site-header{ position:sticky;top:0;z-index:20;background:rgba(13,15,21,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border) }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;background:var(--accent);color:#081a12;border-radius:4px;font-weight:700}
+    .brand-name{font-weight:700}
+    .top-nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+    .top-nav a:hover{color:var(--text)}
+    .hero{padding:64px 0}
+    .hero-inner{text-align:center}
+    .hero h1{margin:0 0 10px;font-size:36px}
+    .subtitle{color:var(--muted)}
+    .cta-row{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--border);text-decoration:none;color:var(--text);box-shadow:0 6px 18px var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#4f7cff)} .btn.ghost{background:transparent} .btn.tiny{padding:8px 10px;font-size:12px}
+    .section{padding:42px 0} .section.alt{background:linear-gradient(180deg,#0b0d14,#0a0b10)}
+    .section-title{font-size:20px;margin:0 0 16px}
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:960px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.card-grid{grid-template-columns:1fr}}
+    .card{ display:block;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;text-decoration:none;color:var(--text); box-shadow:0 10px 24px var(--shadow);transition:transform .2s ease, border-color .2s ease }
+    .card:hover{transform:translateY(-2px);border-color:#2b2f3a}
+    .card-icon{font-size:22px;margin-bottom:8px}
+    .card-title{font-weight:600}
+    .card-desc{color:var(--muted);font-size:14px;margin-top:2px}
+    .card-host{color:#b6c3ff;font-size:12px;margin-top:6px}
+    .card-ping{font-size:12px;margin-top:6px;color:var(--good)}
+    .card-ping.warn{color:var(--warn)} .card-ping.bad{color:var(--bad)} .card-ping.fail{color:var(--bad)}
+    .tips{background:rgba(122,164,255,.08);border:1px dashed #2b3a5f;padding:12px;border-radius:12px;color:#c9d6ff}
+    .ann-list{display:grid;gap:12px}
+    .ann-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+    .ann-title{font-weight:600}
+    .ann-meta{color:var(--muted);font-size:12px;margin:4px 0 8px}
+    .faq{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px;margin:10px 0}
+    .site-footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(13,15,21,.5);backdrop-filter:blur(10px)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .footer-inner .muted{color:var(--muted);font-size:12px}
+    .banner{background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.4);color:#ffe8a3;border-radius:12px;padding:10px;margin:0 20px}
+  </style>
+</head>
+<body>
+
+<div id="pw-mask" style="position:fixed;inset:0;background:#0b0c10;display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#121318;border:1px solid #1f2129;padding:24px;border-radius:14px;width:280px;text-align:center;box-shadow:0 10px 22px rgba(0,0,0,.45);">
+    <h3 style="margin:0 0 12px;font-size:18px;color:#e8eaed;">访问验证</h3>
+    <p style="margin:0 0 12px;color:#9aa0a6;font-size:14px;">请输入访问密码（提示：666）</p>
+    <input id="pw-input" type="password" placeholder="输入密码"
+      style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#0f1014;color:#fff;text-align:center;font-size:15px;">
+    <button id="pw-btn" style="margin-top:14px;width:100%;padding:10px;border-radius:8px;background:#4f7cff;border:0;color:#fff;font-size:15px;cursor:pointer;">
+      确认
+    </button>
+    <p id="pw-msg" style="margin-top:10px;color:#ff7b7b;font-size:13px;display:none;">密码错误，请重新输入</p>
+    <p id="pw-lock" style="margin-top:10px;color:#ffd166;font-size:13px;display:none;">错误次数过多，请 30 分钟后再试。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  const correct = "666"; // 验证密码改为 666
+  const secret = btoa(correct + "##");
+  const PASS_KEY = "nav_access_pass";
+  const ERROR_KEY = "nav_access_err";
+  const LOCK_KEY = "nav_access_lock";
+
+  const mask = document.getElementById("pw-mask");
+  const input = document.getElementById("pw-input");
+  const btn = document.getElementById("pw-btn");
+  const msg = document.getElementById("pw-msg");
+  const lockMsg = document.getElementById("pw-lock");
+
+  const saved = localStorage.getItem(PASS_KEY);
+  const lockUntil = parseInt(localStorage.getItem(LOCK_KEY) || "0", 10);
+
+  if(Date.now() < lockUntil){
+    lockMsg.style.display = "block";
+    input.disabled = true;
+    btn.disabled = true;
+    return;
+  }
+
+  if(saved === secret){
+    mask.style.display = "none";
+    return;
+  }
+
+  function check(){
+    const val = input.value.trim();
+    let err = parseInt(localStorage.getItem(ERROR_KEY) || "0", 10);
+
+    if(val === correct){
+      localStorage.setItem(PASS_KEY, secret);
+      localStorage.removeItem(ERROR_KEY);
+      localStorage.removeItem(LOCK_KEY);
+      mask.style.display = "none";
+      return;
+    }
+
+    err++;
+    localStorage.setItem(ERROR_KEY, err.toString());
+    msg.style.display = "block";
+    input.value = "";
+    input.focus();
+
+    if(err >= 3){
+      const lockTime = Date.now() + 30 * 60 * 1000;
+      localStorage.setItem(LOCK_KEY, lockTime.toString());
+      input.disabled = true;
+      btn.disabled = true;
+      msg.style.display = "none";
+      lockMsg.style.display = "block";
+    }
+  }
+
+  btn.addEventListener("click", check);
+  input.addEventListener("keydown", function(e){ if(e.key === "Enter") check(); });
+  input.focus();
+})();
+</script>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">◼︎</span>
+      <span class="brand-name">欧美 导航</span>
+    </div>
+    <nav class="top-nav">
+      <a href="#links">官方入口</a>
+      <a href="#ann">最新公告</a>
+      <a href="#help">常见使用指南</a>
+    </nav>
+  </div>
+</header>
+
+<noscript>
+  <div class="banner">您的浏览器已禁用 JavaScript，实时延迟与跳转可能不准确。请启用 JS 或更换浏览器。</div>
+</noscript>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>一站式入口 & 备用通道</h1>
+      <p class="subtitle">主域已全面切换，请统一使用 <strong>hao.oumei.lat</strong> 登录面板。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://hao.oumei.lat" target="_blank" rel="noopener">进入面板（Edge 入口）</a>
+        <a class="btn ghost" href="#links">查看所有分流通道</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="links" class="section">
+    <div class="container">
+      <h2 class="section-title">分流入口（实时延迟测试）</h2>
+
+      <div class="card-grid">
+        <a class="card" href="https://lolo.oumei.lat" target="_blank" rel="noopener">
+          <div class="card-icon">🚦</div>
+          <div class="card-title">分流入口 lolo</div>
+          <div class="card-desc">就近接入 · 自动转发至源站</div>
+          <div class="card-host">lolo.oumei.lat</div>
+          <div class="card-ping" id="ping-lolo">延迟：检测中…</div>
+        </a>
+
+        <a class="card" href="https://oneye.oumei.lat/" target="_blank" rel="noopener">
+          <div class="card-icon">🚦</div>
+          <div class="card-title">分流入口 oneye</div>
+          <div class="card-desc">健康优选 · 跨网平摊流量负载</div>
+          <div class="card-host">oneye.oumei.lat</div>
+          <div class="card-ping" id="ping-oneye">延迟：检测中…</div>
+        </a>
+
+        <a class="card" href="https://py.huaguoshan.qzz.io" target="_blank" rel="noopener">
+          <div class="card-icon">🚦</div>
+          <div class="card-title">高峰备用入口 py</div>
+          <div class="card-desc">高峰备份 · 多运营商兼容</div>
+          <div class="card-host">py.huaguoshan.qzz.io</div>
+          <div class="card-ping" id="ping-py">延迟：检测中…</div>
+        </a>
+      </div>
+
+      <div class="tips" style="margin-top:14px">
+        💡 进站提示：如果遇到联通或部分宽带无法登录，请尝试切换上方不同的分流入口，或开启代理网络后重试。
+      </div>
+    </div>
+  </section>
+
+  <section id="ann" class="section alt">
+    <div class="container">
+      <h2 class="section-title">公告与核心更新</h2>
+      <div class="ann-list">
+        <article class="ann-card">
+          <div class="ann-title">[置顶] 核心域名切换公告</div>
+          <div class="ann-meta">更新时间：<time id="ts">—</time></div>
+          <div class="ann-body">
+            旧域名 <strong>haoyifly.lat</strong> 已遭封锁不可用，请广大用户统一使用 <strong>hao.oumei.lat</strong> 及其相关的测速入口。建议按 <b>Ctrl + D</b> 收藏本导航页，回家不迷路。
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="help" class="section">
+    <div class="container">
+      <h2 class="section-title">新手教程与常见问题</h2>
+      <details class="faq" open><summary>📂 官方软件使用教程（新手必看）</summary>
+        <div style="padding-top:8px;">
+          <a href="https://jc.naimeijc.cc/doc/24/" target="_blank" style="color:#6aa2ff; font-weight:bold;">👉 点击这里查看：海外客户端使用教程</a><br>
+          <a href="https://jc.naimeijc.cc/doc/24/" target="_blank" style="color:#ffd166; font-size:13px;">[备用链接] 点击查看备用教程页面</a>
+        </div>
+      </details>
+      <details class="faq"><summary>🍏 苹果 iOS 新手看这里</summary><div>如果遇到客户端配置问题，可以点击查阅专门的 <a href="https://jc.naimeijc.cc/doc/66/" target="_blank" style="color:#6aa2ff;">iOS 配置与小火箭求助指南</a>。</div></details>
+      <details class="faq"><summary>🌐 不同宽带运营商无法打开怎么办？</summary><div>由于国内防火墙会对某些节点做单运营商（如联通）的间歇性阻断，遇到打不开时，请点击上方的其他备用入口（如 py 入口），或者优先加入下方的纸飞机官方群获取最新的临时入口 IP。</div></details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="left">
+      <div>© <span id="y"></span> 欧美 导航. All rights reserved.</div>
+      <div class="muted">官方纸飞机群：https://t.me/dasheng_guilai666</div>
+    </div>
+    <div class="right">
+      <a href="#top" class="btn tiny" id="toTop">回到顶部 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  const t=document.getElementById('ts'); if(t) t.textContent=new Date().toISOString().slice(0,10);
+  const toTop=document.getElementById('toTop'); if(toTop) toTop.addEventListener('click',e=>{e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});});
+})();
+
+// —— 核心：多入口自动延迟测试逻辑 ——
+const HOSTS = [
+  { host: 'lolo.oumei.lat', id: 'ping-lolo' },
+  { host: 'oneye.oumei.lat', id: 'ping-oneye' },
+  { host: 'py.huaguoshan.qzz.io', id: 'ping-py' },
+];
+
+function setPingText(id, ms) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (ms === null) { el.textContent = '延迟：超时'; el.className='card-ping fail'; return; }
+  el.textContent = `延迟：${ms} ms`;
+  el.className='card-ping' + (ms>400?' bad': ms>200?' warn':'');
+}
+function pingOnce(url, timeout=5000){
+  const ctrl = new AbortController();
+  const tid = setTimeout(()=>ctrl.abort('timeout'), timeout);
+  const start = performance.now();
+  return fetch(url, { method: 'GET', cache: 'no-store', mode: 'no-cors', signal: ctrl.signal })
+    .then(()=> Math.round(performance.now()-start))
+    .catch(()=> null)
+    .finally(()=> clearTimeout(tid));
+}
+async function testPing(host, id){
+  const t = Date.now();
+  const paths = ['/cdn-cgi/trace','/health','/__ok.txt'];
+  for (const p of paths){
+    const ms = await pingOnce(`https://${host}${p}?t=${t}`);
+    if (ms !== null){ setPingText(id, ms); return; }
+  }
+  setPingText(id, null);
+}
+function loopPing(){ HOSTS.forEach(({host,id})=>testPing(host,id)); }
+loopPing(); setInterval(loopPing, 30000);
+</script>
+
+</body>
+</html>
