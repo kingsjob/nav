@@ -153,9 +153,9 @@
   <section class="hero">
     <div class="container hero-inner">
       <h1>一站式入口 & 备用通道</h1>
-      <p class="subtitle">主域已全面切换，请统一使用 <strong>hao.oumei.lat</strong> 登录面板。</p>
+      <p class="subtitle">主域已全面切换，请统一使用 <strong>oumei.lat</strong> 登录面板。</p>
       <div class="cta-row">
-        <a class="btn primary" href="https://hao.oumei.lat" target="_blank" rel="noopener">进入面板（Edge 入口）</a>
+        <a class="btn primary" href="https://oumei.lat" target="_blank" rel="noopener">进入面板（Edge 入口）</a>
         <a class="btn ghost" href="#links">查看所有分流通道</a>
       </div>
     </div>
@@ -166,20 +166,20 @@
       <h2 class="section-title">分流入口（实时延迟测试）</h2>
 
       <div class="card-grid">
-        <a class="card" href="https://lolo.oumei.lat" target="_blank" rel="noopener">
+        <a class="card" href="https://lucky.haoyifly.lat/" target="_blank" rel="noopener">
           <div class="card-icon">🚦</div>
-          <div class="card-title">分流入口 lolo</div>
+          <div class="card-title">分流入口 lucky</div>
           <div class="card-desc">就近接入 · 自动转发至源站</div>
-          <div class="card-host">lolo.oumei.lat</div>
-          <div class="card-ping" id="ping-lolo">延迟：检测中…</div>
+          <div class="card-host">lucky.haoyifly.lat</div>
+          <div class="card-ping" id="ping-lucky">延迟：检测中…</div>
         </a>
 
-        <a class="card" href="https://oneye.oumei.lat/" target="_blank" rel="noopener">
+        <a class="card" href="https://oneday.dudupao.dpdns.org/" target="_blank" rel="noopener">
           <div class="card-icon">🚦</div>
-          <div class="card-title">分流入口 oneye</div>
+          <div class="card-title">分流入口 oneday</div>
           <div class="card-desc">健康优选 · 跨网平摊流量负载</div>
-          <div class="card-host">oneye.oumei.lat</div>
-          <div class="card-ping" id="ping-oneye">延迟：检测中…</div>
+          <div class="card-host">oneday.dudupao.dpdns.org</div>
+          <div class="card-ping" id="ping-oneday">延迟：检测中…</div>
         </a>
 
         <a class="card" href="https://py.huaguoshan.qzz.io" target="_blank" rel="noopener">
@@ -248,8 +248,8 @@
 
 // —— 核心：多入口自动延迟测试逻辑 ——
 const HOSTS = [
-  { host: 'lolo.oumei.lat', id: 'ping-lolo' },
-  { host: 'oneye.oumei.lat', id: 'ping-oneye' },
+  { host: 'lucky.haoyifly.lat', id: 'ping-lucky' },
+  { host: 'oneday.dudupao.dpdns.org', id: 'ping-oneday' },
   { host: 'py.huaguoshan.qzz.io', id: 'ping-py' },
 ];
 
