@@ -1,286 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>服务导航 | 欧美</title>
-  <meta name="description" content="官方入口与备用通道，实时延迟展示。" />
-  <meta http-equiv="x-ua-compatible" content="IE=edge" />
-  <meta http-equiv="referrer" content="same-origin" />
-  <meta name="format-detection" content="telephone=no" />
-  <style>
-    :root{ --bg:#0b0c10; --card:#121318; --muted:#9aa0a6; --text:#e8eaed; --brand:#6aa2ff; --accent:#7df4c8; --border:#1f2129; --shadow: rgba(0,0,0,.35); --warn:#ffd166; --bad:#ff7b7b; --good:#7df4c8; }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background:linear-gradient(180deg,#0a0b10,#0d0f15 40%,#0a0b10); color:var(--text); }
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    .site-header{ position:sticky;top:0;z-index:20;background:rgba(13,15,21,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border) }
-    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;background:var(--accent);color:#081a12;border-radius:4px;font-weight:700}
-    .brand-name{font-weight:700}
-    .top-nav a{color:var(--muted);text-decoration:none;margin-left:16px}
-    .top-nav a:hover{color:var(--text)}
-    .hero{padding:64px 0}
-    .hero-inner{text-align:center}
-    .hero h1{margin:0 0 10px;font-size:36px}
-    .subtitle{color:var(--muted)}
-    .cta-row{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--border);text-decoration:none;color:var(--text);box-shadow:0 6px 18px var(--shadow)}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),#4f7cff)} .btn.ghost{background:transparent} .btn.tiny{padding:8px 10px;font-size:12px}
-    .section{padding:42px 0} .section.alt{background:linear-gradient(180deg,#0b0d14,#0a0b10)}
-    .section-title{font-size:20px;margin:0 0 16px}
-    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width:960px){.card-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.card-grid{grid-template-columns:1fr}}
-    .card{ display:block;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;text-decoration:none;color:var(--text); box-shadow:0 10px 24px var(--shadow);transition:transform .2s ease, border-color .2s ease }
-    .card:hover{transform:translateY(-2px);border-color:#2b2f3a}
-    .card-icon{font-size:22px;margin-bottom:8px}
-    .card-title{font-weight:600}
-    .card-desc{color:var(--muted);font-size:14px;margin-top:2px}
-    .card-host{color:#b6c3ff;font-size:12px;margin-top:6px}
-    .card-ping{font-size:12px;margin-top:6px;color:var(--good)}
-    .card-ping.warn{color:var(--warn)} .card-ping.bad{color:var(--bad)} .card-ping.fail{color:var(--bad)}
-    .tips{background:rgba(122,164,255,.08);border:1px dashed #2b3a5f;padding:12px;border-radius:12px;color:#c9d6ff}
-    .ann-list{display:grid;gap:12px}
-    .ann-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
-    .ann-title{font-weight:600}
-    .ann-meta{color:var(--muted);font-size:12px;margin:4px 0 8px}
-    .faq{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px;margin:10px 0}
-    .site-footer{border-top:1px solid var(--border);padding:16px 0;background:rgba(13,15,21,.5);backdrop-filter:blur(10px)}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .footer-inner .muted{color:var(--muted);font-size:12px}
-    .banner{background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.4);color:#ffe8a3;border-radius:12px;padding:10px;margin:0 20px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞羽全球加速中心 - 官方发布页</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0f19;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(31, 41, 55, 0.3) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.05) 0, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.05) 0, transparent 50%);
+        }
+    </style>
 </head>
-<body>
+<body class="text-gray-200 min-h-screen flex flex-col justify-between font-sans selection:bg-blue-600 selection:text-white">
 
-<div id="pw-mask" style="position:fixed;inset:0;background:#0b0c10;display:flex;align-items:center;justify-content:center;z-index:9999;">
-  <div style="background:#121318;border:1px solid #1f2129;padding:24px;border-radius:14px;width:280px;text-align:center;box-shadow:0 10px 22px rgba(0,0,0,.45);">
-    <h3 style="margin:0 0 12px;font-size:18px;color:#e8eaed;">访问验证</h3>
-    <p style="margin:0 0 12px;color:#9aa0a6;font-size:14px;">请输入访问密码（提示：666）</p>
-    <input id="pw-input" type="password" placeholder="输入密码"
-      style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#0f1014;color:#fff;text-align:center;font-size:15px;">
-    <button id="pw-btn" style="margin-top:14px;width:100%;padding:10px;border-radius:8px;background:#4f7cff;border:0;color:#fff;font-size:15px;cursor:pointer;">
-      确认
-    </button>
-    <p id="pw-msg" style="margin-top:10px;color:#ff7b7b;font-size:13px;display:none;">密码错误，请重新输入</p>
-    <p id="pw-lock" style="margin-top:10px;color:#ffd166;font-size:13px;display:none;">错误次数过多，请 30 分钟后再试。</p>
-  </div>
-</div>
-
-<script>
-(function(){
-  const correct = "666"; // 验证密码改为 666
-  const secret = btoa(correct + "##");
-  const PASS_KEY = "nav_access_pass";
-  const ERROR_KEY = "nav_access_err";
-  const LOCK_KEY = "nav_access_lock";
-
-  const mask = document.getElementById("pw-mask");
-  const input = document.getElementById("pw-input");
-  const btn = document.getElementById("pw-btn");
-  const msg = document.getElementById("pw-msg");
-  const lockMsg = document.getElementById("pw-lock");
-
-  const saved = localStorage.getItem(PASS_KEY);
-  const lockUntil = parseInt(localStorage.getItem(LOCK_KEY) || "0", 10);
-
-  if(Date.now() < lockUntil){
-    lockMsg.style.display = "block";
-    input.disabled = true;
-    btn.disabled = true;
-    return;
-  }
-
-  if(saved === secret){
-    mask.style.display = "none";
-    return;
-  }
-
-  function check(){
-    const val = input.value.trim();
-    let err = parseInt(localStorage.getItem(ERROR_KEY) || "0", 10);
-
-    if(val === correct){
-      localStorage.setItem(PASS_KEY, secret);
-      localStorage.removeItem(ERROR_KEY);
-      localStorage.removeItem(LOCK_KEY);
-      mask.style.display = "none";
-      return;
-    }
-
-    err++;
-    localStorage.setItem(ERROR_KEY, err.toString());
-    msg.style.display = "block";
-    input.value = "";
-    input.focus();
-
-    if(err >= 3){
-      const lockTime = Date.now() + 30 * 60 * 1000;
-      localStorage.setItem(LOCK_KEY, lockTime.toString());
-      input.disabled = true;
-      btn.disabled = true;
-      msg.style.display = "none";
-      lockMsg.style.display = "block";
-    }
-  }
-
-  btn.addEventListener("click", check);
-  input.addEventListener("keydown", function(e){ if(e.key === "Enter") check(); });
-  input.focus();
-})();
-</script>
-
-<header class="site-header" id="top">
-  <div class="container header-inner">
-    <div class="brand">
-      <span class="logo" aria-hidden="true">◼︎</span>
-      <span class="brand-name">欧美 导航</span>
+    <div class="bg-gradient-to-r from-blue-900/40 via-purple-900/40 to-blue-900/40 border-b border-gray-800 text-center py-2 text-xs md:text-sm text-blue-400 tracking-wide">
+        <i class="fa-solid fa-bell mr-2 animate-pulse"></i>为防止失联，请按下 <kbd class="px-1.5 py-0.5 bg-gray-800 rounded text-gray-400 border border-gray-700 shadow-sm text-[10px]">Ctrl + D</kbd> 收藏本页面到浏览器收藏夹
     </div>
-    <nav class="top-nav">
-      <a href="#links">官方入口</a>
-      <a href="#ann">最新公告</a>
-      <a href="#help">常见使用指南</a>
-    </nav>
-  </div>
-</header>
 
-<noscript>
-  <div class="banner">您的浏览器已禁用 JavaScript，实时延迟与跳转可能不准确。请启用 JS 或更换浏览器。</div>
-</noscript>
+    <main class="container mx-auto max-w-6xl px-4 py-12 md:py-20 my-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> 全线骨干节点正在以最高速度稳定运行中
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                        飞羽加速器
+                    </h1>
+                    <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        采用工业级 TLS 完美伪装与多路中转路由拓扑，保护每一条隐私数据的跨境传输安全。全面原生适配多端全自动化客户端。
+                    </p>
+                </div>
 
-<main>
-  <section class="hero">
-    <div class="container hero-inner">
-      <h1>一站式入口 & 备用通道</h1>
-      <p class="subtitle">主域已全面切换，请统一使用 <strong>oumei.lat</strong> 登录面板。</p>
-      <div class="cta-row">
-        <a class="btn primary" href="https://oumei.lat" target="_blank" rel="noopener">进入面板（Edge 入口）</a>
-        <a class="btn ghost" href="#links">查看所有分流通道</a>
-      </div>
-    </div>
-  </section>
+                <div class="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl max-w-2xl mx-auto lg:mx-0 text-left space-y-1">
+                    <h4 class="text-amber-400 text-sm font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i> 使用前必读注意事项：
+                    </h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        1. 下载后若客户端无法联网，请检查电脑/手机系统时间，确保与北京时间同步，相差不能超过 1 分钟。<br>
+                        2. 下方 3 个官网入口数据及账号完全互通。若遇阻断，请点击右下角蓝色悬浮图标联系 24 小时在线客服。
+                    </p>
+                </div>
 
-  <section id="links" class="section">
-    <div class="container">
-      <h2 class="section-title">分流入口（实时延迟测试）</h2>
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-gray-400 tracking-wider text-left uppercase hidden lg:block">专用客户端全能下载</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0">
+                        
+                        <a href="https://wwbxd.lanzouu.com/iLq953pv1kpg" target="_blank" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-blue-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
+                            <div class="flex items-center gap-4 text-left">
+                                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-windows text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">Windows 桌面端</div>
+                                    <div class="text-xs text-gray-500 mt-0.5">电脑傻瓜式全自动客户端</div>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-blue-400 transition-colors duration-300 text-lg"></i>
+                        </a>
 
-      <div class="card-grid">
-        <a class="card" href="https://lucky.huaguoshankkk.online/" target="_blank" rel="noopener">
-          <div class="card-icon">🚦</div>
-          <div class="card-title">分流入口 lucky</div>
-          <div class="card-desc">就近接入 · 自动转发至源站</div>
-          <div class="card-host">lucky.huaguoshankkk.online</div>
-          <div class="card-ping" id="ping-lucky">延迟：检测中…</div>
-        </a>
+                        <a href="https://sub-1.dashengguilai.xyz/apps/orange-v2.apk" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-green-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
+                            <div class="flex items-center gap-4 text-left">
+                                <div class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-android text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">Android 安卓手机端</div>
+                                    <div class="text-xs text-gray-500 mt-0.5">原生一键连接（.apk下载）</div>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-green-400 transition-colors duration-300 text-lg"></i>
+                        </a>
 
-        <a class="card" href="https://oneday.dudupao.dpdns.org/" target="_blank" rel="noopener">
-          <div class="card-icon">🚦</div>
-          <div class="card-title">分流入口 oneday</div>
-          <div class="card-desc">健康优选 · 跨网平摊流量负载</div>
-          <div class="card-host">oneday.dudupao.dpdns.org</div>
-          <div class="card-ping" id="ping-oneday">延迟：检测中…</div>
-        </a>
+                        <a href="https://testflight.apple.com/join/YOUR_TESTFLIGHT_CODE" target="_blank" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-purple-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
+                            <div class="flex items-center gap-4 text-left">
+                                <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-apple text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">iOS 苹果手机端</div>
+                                    <div class="text-xs text-purple-400/80 font-medium mt-0.5"><span class="px-1 bg-purple-500/10 border border-purple-500/20 rounded">TestFlight 测试版</span></div>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-purple-400 transition-colors duration-300 text-lg"></i>
+                        </a>
 
-        <a class="card" href="https://py.huaguoshan.qzz.io" target="_blank" rel="noopener">
-          <div class="card-icon">🚦</div>
-          <div class="card-title">高峰备用入口 py</div>
-          <div class="card-desc">高峰备份 · 多运营商兼容</div>
-          <div class="card-host">py.huaguoshan.qzz.io</div>
-          <div class="card-ping" id="ping-py">延迟：检测中…</div>
-        </a>
-      </div>
+                        <a href="https://wwbxd.lanzouu.com/ibF8d3pv1leb" target="_blank" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-indigo-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
+                            <div class="flex items-center gap-4 text-left">
+                                <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-solid fa-desktop text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-white">macOS 电脑端</div>
+                                    <div class="text-xs text-gray-500 mt-0.5">独立解压副本（解压密码 1234）</div>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-indigo-400 transition-colors duration-300 text-lg"></i>
+                        </a>
 
-      <div class="tips" style="margin-top:14px">
-        💡 进站提示：如果遇到联通或部分宽带无法登录，请尝试切换上方不同的分流入口，或开启代理网络后重试。
-      </div>
-    </div>
-  </section>
+                    </div>
+                </div>
+            </div>
 
-  <section id="ann" class="section alt">
-    <div class="container">
-      <h2 class="section-title">公告与核心更新</h2>
-      <div class="ann-list">
-        <article class="ann-card">
-          <div class="ann-title">[置顶] 核心域名切换公告</div>
-          <div class="ann-meta">更新时间：<time id="ts">—</time></div>
-          <div class="ann-body">
-            旧域名 <strong>haoyifly.lat</strong> 已遭封锁不可用，请广大用户统一使用 <strong>hao.oumei.lat</strong> 及其相关的测速入口。建议按 <b>Ctrl + D</b> 收藏本导航页，回家不迷路。
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+            <div class="lg:col-span-5">
+                <div class="p-6 md:p-8 bg-gray-900/50 border border-gray-800 rounded-3xl shadow-2xl backdrop-blur-xl space-y-6">
+                    <div class="space-y-1">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-blue-500"></i> 安全官网入口导航
+                        </h3>
+                        <p class="text-xs text-gray-500">多路容灾隧道保障，任意选择一条均可正常登录</p>
+                    </div>
 
-  <section id="help" class="section">
-    <div class="container">
-      <h2 class="section-title">新手教程与常见问题</h2>
-      <details class="faq" open><summary>📂 官方软件使用教程（新手必看）</summary>
-        <div style="padding-top:8px;">
-          <a href="https://jc.naimeijc.cc/doc/24/" target="_blank" style="color:#6aa2ff; font-weight:bold;">👉 点击这里查看：海外客户端使用教程</a><br>
-          <a href="https://jc.naimeijc.cc/doc/24/" target="_blank" style="color:#ffd166; font-size:13px;">[备用链接] 点击查看备用教程页面</a>
+                    <div class="space-y-3">
+                        <a href="https://lucky.huaguoshankkk.online/#/login" target="_blank" class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl hover:bg-gray-900 hover:border-gray-700 transition-all group">
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">登录官网入口 1（主站通道）</span>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span>高速稳定</span>
+                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="https://n1.huaguoshankkk.online/#/login" target="_blank" class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl hover:bg-gray-900 hover:border-gray-700 transition-all group">
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">登录官网入口 2（备用分流）</span>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span>容灾备份</span>
+                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="https://oneday.dudupao.dpdns.org//#/login" target="_blank" class="flex items-center justify-between p-4 bg-blue-500/5 border border-blue-500/20 rounded-2xl hover:bg-blue-500/10 hover:border-blue-500/40 transition-all group">
+                            <span class="text-sm font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">登录官网入口 3（抗污染极速专线）</span>
+                            <div class="flex items-center gap-2 text-xs text-blue-400">
+                                <span class="px-1.5 py-0.5 bg-blue-500/10 rounded text-[10px] uppercase font-bold tracking-wider">推荐</span>
+                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-gray-800 text-center">
+                        <span class="text-xs text-gray-500"><i class="fa-solid fa-lock mr-1.5"></i>数据采用端到端军工级安全隔离加密</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </details>
-      <details class="faq"><summary>🍏 苹果 iOS 新手看这里</summary><div>如果遇到客户端配置问题，可以点击查阅专门的 <a href="https://jc.naimeijc.cc/doc/66/" target="_blank" style="color:#6aa2ff;">iOS 配置与小火箭求助指南</a>。</div></details>
-      <details class="faq"><summary>🌐 不同宽带运营商无法打开怎么办？</summary><div>由于国内防火墙会对某些节点做单运营商（如联通）的间歇性阻断，遇到打不开时，请点击上方的其他备用入口（如 py 入口），或者优先加入下方的纸飞机官方群获取最新的临时入口 IP。</div></details>
-    </div>
-  </section>
-</main>
+    </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="left">
-      <div>© <span id="y"></span> 欧美 导航. All rights reserved.</div>
-      <div class="muted">官方纸飞机群：https://t.me/dasheng_guilai666</div>
-    </div>
-    <div class="right">
-      <a href="#top" class="btn tiny" id="toTop">回到顶部 ↑</a>
-    </div>
-  </div>
-</footer>
+    <footer class="border-t border-gray-900 bg-gray-950/40 py-6 text-center text-xs text-gray-600 tracking-wide">
+        &copy; 2026 飞羽加速中心 全球网络技术实验室. All Rights Reserved.
+    </footer>
 
-<script>
-(function(){
-  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  const t=document.getElementById('ts'); if(t) t.textContent=new Date().toISOString().slice(0,10);
-  const toTop=document.getElementById('toTop'); if(toTop) toTop.addEventListener('click',e=>{e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});});
-})();
-
-// —— 核心：多入口自动延迟测试逻辑 ——
-const HOSTS = [
-  { host: 'lucky.huaguoshankkk.online', id: 'ping-lucky' },
-  { host: 'oneday.dudupao.dpdns.org', id: 'ping-oneday' },
-  { host: 'py.huaguoshan.qzz.io', id: 'ping-py' },
-];
-
-function setPingText(id, ms) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  if (ms === null) { el.textContent = '延迟：超时'; el.className='card-ping fail'; return; }
-  el.textContent = `延迟：${ms} ms`;
-  el.className='card-ping' + (ms>400?' bad': ms>200?' warn':'');
-}
-function pingOnce(url, timeout=5000){
-  const ctrl = new AbortController();
-  const tid = setTimeout(()=>ctrl.abort('timeout'), timeout);
-  const start = performance.now();
-  return fetch(url, { method: 'GET', cache: 'no-store', mode: 'no-cors', signal: ctrl.signal })
-    .then(()=> Math.round(performance.now()-start))
-    .catch(()=> null)
-    .finally(()=> clearTimeout(tid));
-}
-async function testPing(host, id){
-  const t = Date.now();
-  const paths = ['/cdn-cgi/trace','/health','/__ok.txt'];
-  for (const p of paths){
-    const ms = await pingOnce(`https://${host}${p}?t=${t}`);
-    if (ms !== null){ setPingText(id, ms); return; }
-  }
-  setPingText(id, null);
-}
-function loopPing(){ HOSTS.forEach(({host,id})=>testPing(host,id)); }
-loopPing(); setInterval(loopPing, 30000);
-</script>
-
+    <script type="text/javascript">
+        window.$crisp=[];
+        // 保持你同行的客服系统 ID，直接继承其客户会话
+        window.CRISP_WEBSITE_ID="5079ece8-b407-499c-93ac-a7b905284ce3";
+        (function(){
+            d=document;
+            s=d.createElement("script");
+            s.src="https://client.crisp.chat/l.js";
+            s.async=1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
 </body>
 </html>
