@@ -1,172 +1,750 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <script defer src="https://stats.oumiga.xyz/script.js" data-website-id="bf204d0c-8fe3-457a-8d71-cf1d48a3a309"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欧米伽全球加速中心 - 官方发布页</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Oumei.tat · 全球网络数据中心 | 每天一毛钱，连接全世界</title>
+    <!-- 字体与图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            background-color: #0b0f19;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(31, 41, 55, 0.3) 0, transparent 50%), 
-                radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.05) 0, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.05) 0, transparent 50%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #0b0e17 0%, #141a2b 100%);
+            color: #ffffff;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            padding: 20px 16px 40px;
+        }
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* 玻璃卡片效果 */
+        .glass-card, .feature-card, .price-card, .cta-banner {
+            background: rgba(18, 26, 40, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(74, 144, 226, 0.18);
+            border-radius: 28px;
+            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 20, 50, 0.3);
+        }
+        /* 顶部提示条 */
+        .notice-bar {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px dashed rgba(245, 158, 11, 0.3);
+            border-radius: 16px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #fbbf24;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .notice-bar kbd {
+            background: #2d3748;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #fff;
+        }
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0 20px;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            font-size: 28px;
+            filter: drop-shadow(0 4px 6px #3b82f6);
+        }
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #bdd3ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo-sub {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #a0b9e0;
+            margin-left: 6px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-link {
+            color: #e0edff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 0;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover {
+            color: #6ea8fe;
+            border-bottom-color: #3b82f6;
+        }
+        /* 导航特定分离按钮样式 */
+        .nav-btn-login {
+            color: #fff;
+            border: 1px solid #3b6cb0;
+            padding: 6px 14px;
+            border-radius: 30px;
+            background: rgba(30, 50, 80, 0.4);
+        }
+        .nav-btn-login:hover {
+            background: #1f3150;
+            border-color: #6094f0;
+        }
+        .nav-btn-register {
+            background: linear-gradient(145deg, #2563eb, #1e40af);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .nav-btn-register:hover {
+            background: linear-gradient(145deg, #3b82f6, #2563eb);
+            transform: translateY(-1px);
+        }
+
+        /* Hero 主视觉 */
+        .hero {
+            text-align: center;
+            margin: 20px 0 32px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #bdd3ff;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            margin-bottom: 18px;
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 10vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #ffffff, #d9e6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+        }
+        .hero-highlight {
+            color: #60a5fa;
+            text-shadow: 0 0 20px #3b82f666;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #b0c8f0;
+            margin-bottom: 28px;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        /* 按钮 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(145deg, #2563eb, #1e40af);
+            color: white;
+            box-shadow: 0 12px 24px -8px #1e3a8a80, 0 0 0 1px #3b82f6 inset;
+            border: 1px solid #6094f0;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(145deg, #3b82f6, #2563eb);
+            box-shadow: 0 18px 28px -10px #1e4bd2;
+            transform: scale(1.02);
+        }
+        .btn-outline {
+            background: rgba(20, 35, 60, 0.7);
+            border: 1px solid #3b6cb0;
+            color: #e2ecff;
+        }
+        .btn-outline:hover {
+            background: #1f3150;
+            border-color: #6094f0;
+        }
+        /* 服务计划列表（套餐区域） */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title i {
+            color: #60a5fa;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .price-card {
+            padding: 24px 20px;
+            transition: transform 0.2s;
+            border: 1px solid rgba(96, 165, 250, 0.25);
+            background: rgba(12, 22, 40, 0.7);
+            display: flex;
+            flex-direction: column;
+        }
+        .price-card:hover {
+            transform: translateY(-6px);
+            border-color: #3b82f6;
+            box-shadow: 0 24px 40px -12px #0f1a2f;
+        }
+        .price-tag {
+            display: inline-block;
+            background: #1e3a8a;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #bfdbfe;
+            margin-bottom: 14px;
+            align-self: flex-start;
+        }
+        .price-name {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: white;
+        }
+        .price-amount {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+        .price-amount small {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #9ab9f0;
+        }
+        .price-period {
+            font-size: 0.95rem;
+            color: #a0bbdf;
+            margin-bottom: 8px;
+        }
+        .daily-cost {
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 40px;
+            padding: 6px 12px;
+            margin: 12px 0 16px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fbbf24;
+            display: inline-block;
+            border: 1px dashed #3b82f6;
+        }
+        .monthly-data {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #d3e2fd;
+            margin-bottom: 16px;
+            border-bottom: 1px dashed #2e4570;
+            padding-bottom: 14px;
+        }
+        .monthly-data i {
+            color: #60a5fa;
+            margin-right: 6px;
+        }
+        .price-spec {
+            list-style: none;
+            margin: 8px 0 22px;
+            flex: 1;
+        }
+        .price-spec li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #d3e2fd;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .price-spec i {
+            color: #34d399;
+            font-size: 1rem;
+            width: 20px;
+            margin-top: 2px;
+        }
+        .spec-highlight {
+            color: #fbbf24;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 4px;
+        }
+        .badge-refund {
+            background: #1e3a5f;
+            color: #b0d0ff;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 6px;
+        }
+        .card-footer {
+            margin-top: auto;
+        }
+        .price-card .btn {
+            width: 100%;
+            padding: 13px 8px;
+            font-size: 1rem;
+        }
+        .card-actions-split {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .card-actions-split .btn-sub-action {
+            flex: 1;
+            text-align: center;
+            padding: 8px 4px;
+            font-size: 0.85rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid #2e4570;
+            color: #9ab9f0;
+            transition: all 0.2s;
+        }
+        .card-actions-split .btn-sub-action:hover {
+            border-color: #60a5fa;
+            color: #fff;
+            background: rgba(30, 50, 80, 0.3);
+        }
+        .tg-link-area {
+            font-size: 0.8rem;
+            margin-top: 12px;
+            text-align: center;
+        }
+        .tg-link-area a {
+            color: #6b8bb0;
+            text-decoration: none;
+            border-bottom: 1px dotted #3b6cb0;
+        }
+        /* 更多方案入口 */
+        .view-all-plans {
+            text-align: center;
+            margin: 16px 0 32px;
+        }
+        .view-all-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 50, 80, 0.6);
+            padding: 12px 28px;
+            border-radius: 60px;
+            color: #c6dcff;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid #3f6190;
+            transition: all 0.2s;
+        }
+        .view-all-link:hover {
+            background: #1f3a5f;
+            border-color: #6094f0;
+            color: white;
+        }
+        /* 客户端网格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin: 24px 0 16px;
+        }
+        .feature-card {
+            padding: 24px 16px;
+            background: rgba(16, 26, 45, 0.6);
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #2a3f60;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        .feature-card:hover {
+            border-color: #60a5fa;
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            color: #60a5fa;
+        }
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #b8cef0;
+            line-height: 1.4;
+        }
+        /* 官网入口与状态条 */
+        .special-region {
+            background: linear-gradient(90deg, #13203a 0%, #1e2f50 100%);
+            border-radius: 60px;
+            padding: 14px 24px;
+            margin: 32px 0 24px;
+            border: 1px solid #3f6190;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+            justify-content: center;
+        }
+        .special-region i {
+            font-size: 1.4rem;
+            color: #fbbf24;
+        }
+        .region-text {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .entrance-badge {
+            background: #2d4a7c;
+            padding: 6px 14px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .entrance-badge:hover {
+            background: #3b62a3;
+        }
+        /* 底部CTA */
+        .cta-banner {
+            margin: 48px 0 32px;
+            padding: 40px 32px;
+            text-align: center;
+            background: linear-gradient(145deg, #101f33, #0b1625);
+            border: 1px solid #2e5a9c;
+        }
+        .cta-banner h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .cta-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        /* 页脚链接 */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin: 24px 0 10px;
+        }
+        .footer-links a {
+            color: #aac3e6;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .copyright {
+            text-align: center;
+            color: #6b8bb0;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; align-items: center; gap: 12px; }
+            .nav-links { justify-content: center; }
+            .hero h1 { font-size: 2.4rem; }
+            .cta-btn-group { flex-direction: column; align-items: stretch; }
+        }
+        i { margin-right: 4px; }
     </style>
 </head>
-<body class="text-gray-200 min-h-screen flex flex-col justify-between font-sans selection:bg-blue-600 selection:text-white">
+<body>
+<div class="page-wrapper">
 
-    <div class="bg-gradient-to-r from-blue-900/40 via-purple-900/40 to-blue-900/40 border-b border-gray-800 text-center py-2 text-xs md:text-sm text-blue-400 tracking-wide">
-        <i class="fa-solid fa-bell mr-2 animate-pulse"></i>为防止失联，请按下 <kbd class="px-1.5 py-0.5 bg-gray-800 rounded text-gray-400 border border-gray-700 shadow-sm text-[10px]">Ctrl + D</kbd> 收藏本页面到浏览器收藏夹
+    <!-- 顶部状态栏 -->
+    <div class="notice-bar">
+        <span><i class="fa-solid fa-bell animate-pulse text-green-400"></i> 全线骨干中转物理拓扑节点正在以最高速度稳定运行中</span>
+        <span>防失联建议：请按下 <kbd>Ctrl + D</kbd> 收藏本页</span>
     </div>
 
-    <main class="container mx-auto max-w-6xl px-4 py-12 md:py-20 my-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
-                        <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> 全线骨干节点正在以最高速度稳定运行中
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
-                        飞羽加速器
-                    </h1>
-                    <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        采用工业级 TLS 完美伪装与多路中转路由拓扑，保护每一条隐私数据的跨境传输安全。全面原生适配多端全自动化客户端。
-                    </p>
-                </div>
-
-                <div class="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl max-w-2xl mx-auto lg:mx-0 text-left space-y-1">
-                    <h4 class="text-amber-400 text-sm font-semibold flex items-center gap-2">
-                        <i class="fa-solid fa-triangle-exclamation"></i> 使用前必读注意事项：
-                    </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">
-                        1. 下载后若客户端无法联网，请检查电脑/手机系统时间，确保与北京时间同步，相差不能超过 1 分钟。<br>
-                        2. 下方 3 个官网入口数据及账号完全互通。若遇阻断，请点击右下角蓝色悬浮图标联系 24 小时在线客服。
-                    </p>
-                </div>
-
-                <div class="space-y-4">
-                    <h3 class="text-sm font-bold text-gray-400 tracking-wider text-left uppercase hidden lg:block">专用客户端全能下载</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0">
-                        
-                        <a href="https://sub-1.dashengguilai.xyz/apps/H加速器绿色版.zip" target="_blank" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-blue-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
-                            <div class="flex items-center gap-4 text-left">
-                                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-windows text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">Windows 桌面端</div>
-                                    <div class="text-xs text-gray-500 mt-0.5">电脑全自动客户端解压即用</div>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-blue-400 transition-colors duration-300 text-lg"></i>
-                        </a>
-
-                        <a href="https://sub-1.dashengguilai.xyz/apps/orange-v2.apk" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-green-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
-                            <div class="flex items-center gap-4 text-left">
-                                <div class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-android text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">Android 安卓手机端</div>
-                                    <div class="text-xs text-gray-500 mt-0.5">原生一键连接（.apk下载）</div>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-green-400 transition-colors duration-300 text-lg"></i>
-                        </a>
-
-                        <a href="https://testflight.apple.com/join/YOUR_TESTFLIGHT_CODE" target="_blank" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-purple-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
-                            <div class="flex items-center gap-4 text-left">
-                                <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-apple text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">iOS 苹果手机端</div>
-                                    <div class="text-xs text-purple-400/80 font-medium mt-0.5"><span class="px-1 bg-purple-500/10 border border-purple-500/20 rounded">TestFlight 测试版</span></div>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-purple-400 transition-colors duration-300 text-lg"></i>
-                        </a>
-
-                        <a href="https://wwbxd.lanzouu.com/ibF8d3pv1leb" target="_blank" class="group flex items-center justify-between p-4 bg-gray-900/60 border border-gray-800 rounded-2xl hover:border-indigo-500/40 hover:bg-gray-900 transition-all duration-300 shadow-xl">
-                            <div class="flex items-center gap-4 text-left">
-                                <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
-                                    <i class="fa-solid fa-desktop text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-white">macOS 电脑端</div>
-                                    <div class="text-xs text-gray-500 mt-0.5">独立解压副本（解压密码 1234）</div>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-circle-arrow-down text-gray-700 group-hover:text-indigo-400 transition-colors duration-300 text-lg"></i>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-5">
-                <div class="p-6 md:p-8 bg-gray-900/50 border border-gray-800 rounded-3xl shadow-2xl backdrop-blur-xl space-y-6">
-                    <div class="space-y-1">
-                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-blue-500"></i> 安全官网入口导航
-                        </h3>
-                        <p class="text-xs text-gray-500">多路容灾隧道保障，任意选择一条均可正常登录</p>
-                    </div>
-
-                    <div class="space-y-3">
-                        <a href="https://lucky.lucky.abc2028.xyz/#/login" target="_blank" class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl hover:bg-gray-900 hover:border-gray-700 transition-all group">
-                            <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">登录官网入口 1（主站通道）</span>
-                            <div class="flex items-center gap-2 text-xs text-gray-500">
-                                <span>高速稳定</span>
-                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
-                            </div>
-                        </a>
-
-                        <a href="https://n1.huaguoshan.qzz.io/#/login" target="_blank" class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl hover:bg-gray-900 hover:border-gray-700 transition-all group">
-                            <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">登录官网入口 2（备用分流）</span>
-                            <div class="flex items-center gap-2 text-xs text-gray-500">
-                                <span>容灾备份</span>
-                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
-                            </div>
-                        </a>
-
-                        <a href="https://oneday.dudupao.dpdns.org//#/login" target="_blank" class="flex items-center justify-between p-4 bg-blue-500/5 border border-blue-500/20 rounded-2xl hover:bg-blue-500/10 hover:border-blue-500/40 transition-all group">
-                            <span class="text-sm font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">登录官网入口 3（抗污染极速专线）</span>
-                            <div class="flex items-center gap-2 text-xs text-blue-400">
-                                <span class="px-1.5 py-0.5 bg-blue-500/10 rounded text-[10px] uppercase font-bold tracking-wider">推荐</span>
-                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="pt-4 border-t border-gray-800 text-center">
-                        <span class="text-xs text-gray-500"><i class="fa-solid fa-lock mr-1.5"></i>数据采用端到端军工级安全隔离加密</span>
-                    </div>
-                </div>
-            </div>
-
+    <!-- 导航栏（已完全分离登录/邀请注册） -->
+    <header class="navbar">
+        <div class="logo-area">
+            <span class="logo-icon">🚀</span>
+            <span class="logo-text">Oumei.tat</span>
+            <span class="logo-sub">欧米伽</span>
         </div>
-    </main>
+        <div class="nav-links">
+            <a href="https://t.me/dasheng_guilai666" target="_blank" class="nav-link"><i class="fab fa-telegram-plane"></i> 技术群组</a>
+            <a href="https://t.me/t.me/dasheng_guilai666" target="_blank" class="nav-link"><i class="fas fa-chart-line"></i> 拓扑测速</a>
+            <a href="https://t.me/t.me/dasheng_guilai666" target="_blank" class="nav-link"><i class="fas fa-file-invoice-dollar"></i> 详细计划</a>
+            <!-- 彻底分流 -->
+            <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="nav-link nav-btn-login"><i class="fas fa-sign-in-alt"></i> 安全登录</a>
+            <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="nav-link nav-btn-register"><i class="fas fa-key"></i> 安全注册</a>
+        </div>
+    </header>
 
-    <footer class="border-t border-gray-900 bg-gray-950/40 py-6 text-center text-xs text-gray-600 tracking-wide">
-        &copy; 2026 欧米伽加速中心 全球网络技术实验室. All Rights Reserved.
-    </footer>
+    <!-- Hero 主视觉 -->
+    <section class="hero">
+        <div class="hero-badge">
+            <i class="fas fa-bolt"></i> 高效全球数据传输方案 · 30+ 工业级中转拓扑
+        </div>
+        <h1>
+            <span class="hero-highlight">每天一毛钱</span><br>
+            无界连接全球网络
+        </h1>
+        <div class="hero-sub">
+            高端跨境链路 · 专属动态QoS调度 · 4K流媒体配置
+        </div>
+        <div class="hero-actions">
+            <!-- Hero 双动作分流 -->
+            <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn btn-outline" style="border-radius: 60px; padding: 14px 36px;">
+                <i class="fas fa-desktop"></i> 已有账号 · 安全登录
+            </a>
+            <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary" style="padding: 14px 36px;">
+                <i class="fas fa-key"></i> 凭受邀码注册 · 开启体验
+            </a>
+        </div>
+    </section>
 
-    <script type="text/javascript">
-        window.$crisp=[];
-        // 保持你同行的客服系统 ID，直接继承其客户会话
-        window.CRISP_WEBSITE_ID="5079ece8-b407-499c-93ac-a7b905284ce3";
-        (function(){
-            d=document;
-            s=d.createElement("script");
-            s.src="https://client.crisp.chat/l.js";
-            s.async=1;
-            d.getElementsByTagName("head")[0].appendChild(s);
-        })();
-    </script>
+    <!-- 精选数据计划 -->
+    <div class="section-title">
+        <i class="fas fa-gem"></i> 精选数据计划 · 限时特惠
+        <span style="margin-left: auto; font-size: 0.9rem; font-weight: 400;">
+            <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" style="color:#9ab9f0;"><i class="fas fa-chart-line"></i> 实时延迟监控 (TG)说明</a>
+        </span>
+    </div>
+    <div class="pricing-grid">
+        <!-- 月付计划 -->
+        <div class="price-card">
+            <span class="price-tag"><i class="far fa-calendar-alt"></i> 灵活月付 · 标准型</span>
+            <div class="price-name">标准弹性计划</div>
+            <div class="price-amount">13.9 <small>元</small></div>
+            <div class="price-period">/月付 · 每月按时重置</div>
+            <div class="monthly-data">
+                <i class="fas fa-bolt"></i> 每月 150GB 高速数据额度
+            </div>
+            <ul class="price-spec">
+                <li><i class="fas fa-database"></i> 150G基础额度 <span class="spec-highlight">(低倍率下最高280G)</span></li>
+                <li><i class="fas fa-infinity"></i> 终端连接无设备数限制</li>
+                <li><i class="fas fa-film"></i> 全自动化智能流媒体重定向</li>
+                <li><i class="fas fa-shield-alt"></i> 高级 V2 加密协议拓扑 <span class="badge-refund">24h无忧保障</span></li>
+            </ul>
+            <div class="card-footer">
+                <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">注册购买</a>
+                <div class="card-actions-split">
+                    <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn-sub-action"><i class="fas fa-sign-in-alt"></i> 老用户登录</a>
+                    <a href="https://t.me/haoyifly" target="_blank" class="btn-sub-action"><i class="fas fa-eye"></i> 延迟测速</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 年付人气爆款 -->
+        <div class="price-card" style="border-color: #3b82f6; box-shadow: 0 0 20px rgba(30, 75, 210, 0.2);">
+            <span class="price-tag" style="background: #b45309;"><i class="fas fa-crown"></i> 长期特享 · 年度爆款</span>
+            <div class="price-name">旗舰性价比计划</div>
+            <div class="price-amount">58 <small>元</small></div>
+            <div class="price-period">/年付 · 每月尊享</div>
+            <div class="daily-cost">
+                <i class="fas fa-clock"></i> ≈ 每天 0.13 元 · 月享达 285GB (低倍率)
+            </div>
+            <div class="monthly-data" style="margin-top: 6px;">
+                <i class="fas fa-gem"></i> 每月固定 200GB ~ 285GB 极速额度
+            </div>
+            <ul class="price-spec">
+                <li><i class="fas fa-database"></i> 200G/月纯净额度 <span class="spec-highlight">(低倍率最高285G)</span></li>
+                <li><i class="fas fa-infinity"></i> 终端连接无设备数限制</li>
+                <li><i class="fas fa-film"></i> 全球全节点流媒体底层解锁</li>
+                <li><i class="fas fa-shield-alt"></i> 骨干 V1 安全协议拓扑 <span class="badge-refund">24h无忧保障</span></li>
+            </ul>
+            <div class="card-footer">
+                <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">使用受邀码注册购买</a>
+                <div class="card-actions-split">
+                    <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn-sub-action"><i class="fas fa-sign-in-alt"></i> 老用户登录</a>
+                    <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" class="btn-sub-action"><i class="fas fa-eye"></i> 延迟测速</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 按量付费 -->
+        <div class="price-card">
+            <span class="price-tag"><i class="fas fa-box"></i> 纯享按量 · 不设时限</span>
+            <div class="price-name">弹性无期包</div>
+            <div class="price-amount">75 <small>元</small></div>
+            <div class="price-period">/一次性付费 · 用完为止</div>
+            <div class="monthly-data">
+                <i class="fas fa-infinity"></i> 500GB 全量数据 · 永不过期
+            </div>
+            <ul class="price-spec">
+                <li><i class="fas fa-database"></i> 500G 纯享总量 <span class="spec-highlight">(低倍率下最高714G)</span></li>
+                <li><i class="fas fa-infinity"></i> 终端连接无设备数限制</li>
+                <li><i class="fas fa-film"></i> 全自动化智能流媒体重定向</li>
+                <li><i class="fas fa-shield-alt"></i> 高级 V2 加密协议拓扑 <span class="badge-refund">24h无忧保障</span></li>
+            </ul>
+            <div class="card-footer">
+                <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">使用受邀码注册购买</a>
+                <div class="card-actions-split">
+                    <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn-sub-action"><i class="fas fa-sign-in-alt"></i> 老用户登录</a>
+                    <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" class="btn-sub-action"><i class="fas fa-eye"></i> 延迟测速</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 更多方案入口 -->
+    <div class="view-all-plans">
+        <a href="https://t.me/Oumei.tat_knowledge/5" target="_blank" class="view-all-link">
+            <i class="fas fa-table-list"></i> 需要更大流量或更多高阶定制？查看全部计划与拓扑对比 →
+        </a>
+    </div>
+
+    <!-- 多端全自动客户端下载 -->
+    <div class="section-title">
+        <i class="fas fa-cloud-download-alt"></i> 多端全能自动化客户端下载
+    </div>
+    <div class="features-grid">
+        <a href="https://sub-1.oumiga.xyz/apps/H%E5%8A%A0%E9%80%9F%E5%99%A8%E7%BB%BF%E8%89%B2%E7%89%88.zip" target="_blank" class="feature-card">
+            <div class="feature-icon"><i class="fab fa-windows"></i></div>
+            <h3>Windows 桌面端</h3>
+            <p>全自动PC客户端，独立解压即用，支持一键智能负载均衡。</p>
+        </a>
+        <a href="https://sub-1.oumeiga.xyz/apps/orange-v2.apk" class="feature-card">
+            <div class="feature-icon" style="color: #4ade80;"><i class="fab fa-android"></i></div>
+            <h3>Android 安卓手机端</h3>
+            <p>原生手机端一键连接，极低内存消耗，全天候长连接不掉线。</p>
+        </a>
+        <a href="https://testflight.apple.com/join/YOUR_TESTFLIGHT_CODE" target="_blank" class="feature-card">
+            <div class="feature-icon" style="color: #c084fc;"><i class="fab fa-apple"></i></div>
+            <h3>iOS 苹果端</h3>
+            <p>提供系统级高度契合的测试配置，无缝嵌入系统底层路由。</p>
+        </a>
+        <a href="https://wwbxd.lanzouu.com/ibF8d3pv1leb" target="_blank" class="feature-card">
+            <div class="feature-icon" style="color: #60a5fa;"><i class="fas fa-desktop"></i></div>
+            <h3>macOS 电脑端</h3>
+            <p>高阶独立副本，全链路极致精炼（解压密码：1234）。</p>
+        </a>
+    </div>
+
+    <!-- 统一容灾官网入口快捷跳转（纯登录业务） -->
+    <div class="special-region">
+        <i class="fas fa-shield-halved"></i>
+        <span class="region-text"><strong>已有账号登录通道（容灾备份）：</strong> ➔ </span>
+        <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="entrance-badge">主站入口 1</a>
+        <a href="https://n1.huaguoshan.qzz.io/#/login" target="_blank" class="entrance-badge">分流入口 2</a>
+        <a href="https://oneday.dudupao.dpdns.org//#/login" target="_blank" class="entrance-badge" style="background: #059669;">极速专线 3</a>
+    </div>
+
+    <!-- 底部大号召 -->
+    <div class="cta-banner">
+        <h2>💎 稳定品质 · 尊享无忧体验</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 8px; color: #ccdfff;">全站实施邀请准入制 · 数据采用端到端隔离加密</p>
+        <div class="cta-btn-group">
+            <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">
+                <i class="fas fa-key"></i> 持受邀码前往注册
+            </a>
+            <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn btn-outline">
+                <i class="fas fa-sign-in-alt"></i> 老用户登录控制台
+            </a>
+        </div>
+    </div>
+
+    <!-- 页脚链接 -->
+    <div class="footer-links">
+        <a href="https://lucky.abc2028.xyz/#/login" target="_blank"><i class="fas fa-desktop"></i> 统一登录</a>
+        <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank"><i class="fas fa-key"></i> 邀请注册</a>
+        <a href="https://t.me/Oumei.tat_official" target="_blank"><i class="fab fa-telegram"></i> 官方技术交流群</a>
+        <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank"><i class="fas fa-chart-line"></i> 延迟测速监控</a>
+    </div>
+    <div class="copyright">
+        © 2026 Oumei.tat 全球网络技术实验室. All Rights Reserved. Data isolated via end-to-end TLS.
+    </div>
+</div>
+
+<!-- 继承您的在线 Crisp 客服系统会话代码 -->
+<script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="5079ece8-b407-499c-93ac-a7b905284ce3";
+    (function(){
+        d=document;
+        s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
 </body>
 </html>
