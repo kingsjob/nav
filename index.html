@@ -1,750 +1,798 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <script defer src="https://stats.oumiga.xyz/script.js" data-website-id="bf204d0c-8fe3-457a-8d71-cf1d48a3a309"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Oumei.tat · 全球网络数据中心 | 每天一毛钱，连接全世界</title>
-    <!-- 字体与图标 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(145deg, #0b0e17 0%, #141a2b 100%);
-            color: #ffffff;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
-            padding: 20px 16px 40px;
-        }
-        .page-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* 玻璃卡片效果 */
-        .glass-card, .feature-card, .price-card, .cta-banner {
-            background: rgba(18, 26, 40, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(74, 144, 226, 0.18);
-            border-radius: 28px;
-            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 20, 50, 0.3);
-        }
-        /* 顶部提示条 */
-        .notice-bar {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px dashed rgba(245, 158, 11, 0.3);
-            border-radius: 16px;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-            color: #fbbf24;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .notice-bar kbd {
-            background: #2d3748;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #fff;
-        }
-        /* 导航栏 */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 0 20px;
-            flex-wrap: wrap;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .logo-icon {
-            font-size: 28px;
-            filter: drop-shadow(0 4px 6px #3b82f6);
-        }
-        .logo-text {
-            font-weight: 700;
-            font-size: 1.6rem;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, #bdd3ff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .logo-sub {
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #a0b9e0;
-            margin-left: 6px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .nav-link {
-            color: #e0edff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 0;
-            transition: all 0.2s;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-link:hover {
-            color: #6ea8fe;
-            border-bottom-color: #3b82f6;
-        }
-        /* 导航特定分离按钮样式 */
-        .nav-btn-login {
-            color: #fff;
-            border: 1px solid #3b6cb0;
-            padding: 6px 14px;
-            border-radius: 30px;
-            background: rgba(30, 50, 80, 0.4);
-        }
-        .nav-btn-login:hover {
-            background: #1f3150;
-            border-color: #6094f0;
-        }
-        .nav-btn-register {
-            background: linear-gradient(145deg, #2563eb, #1e40af);
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-weight: 600;
-        }
-        .nav-btn-register:hover {
-            background: linear-gradient(145deg, #3b82f6, #2563eb);
-            transform: translateY(-1px);
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
 
-        /* Hero 主视觉 */
-        .hero {
-            text-align: center;
-            margin: 20px 0 32px;
+  <!--
+    XBoard SEO Homepage v1
+    使用前请替换：
+    1) https://oumei.lat/ 为你的SEO站主域名
+    2) XBOARD_REGISTER_URL / XBOARD_LOGIN_URL 为你的真实XBoard注册登录地址
+    3) Telegram / 客户端下载地址按需替换
+  -->
+
+  <title>全球网络加速服务｜低延迟海外网络连接｜Oumei.tat 欧米伽</title>
+  <meta name="description" content="Oumei.tat 欧米伽提供全球网络加速与低延迟跨境连接方案，支持多端客户端、流媒体访问优化、游戏低延迟与远程办公网络优化。">
+  <meta name="keywords" content="全球网络加速, 网络加速器, 海外网络加速, 低延迟节点, VPN替代方案, 节点订阅, 流媒体访问优化, 游戏加速, ChatGPT网络优化, XBoard">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="theme-color" content="#0b1020">
+  <link rel="canonical" href="https://oumei.lat/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="Oumei.tat 欧米伽">
+  <meta property="og:title" content="全球网络加速服务｜低延迟海外网络连接｜Oumei.tat 欧米伽">
+  <meta property="og:description" content="稳定、低延迟、多端可用的全球网络加速服务，适合流媒体、游戏、AI工具与跨境办公。">
+  <meta property="og:url" content="https://oumei.lat/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Performance: no external font/CSS dependency -->
+  <style>
+    :root{
+      --bg:#07101f;
+      --bg2:#0e1830;
+      --card:#111d35cc;
+      --card2:#0c162bcc;
+      --line:#253d63;
+      --line2:#355f9d;
+      --text:#f7fbff;
+      --muted:#b7c9e7;
+      --muted2:#87a3ca;
+      --brand:#4f8cff;
+      --brand2:#7dd3fc;
+      --gold:#f6c453;
+      --green:#35d399;
+      --danger:#fb7185;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+      --radius:26px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 18% -10%, rgba(79,140,255,.32), transparent 36rem),
+        radial-gradient(circle at 80% 8%, rgba(125,211,252,.16), transparent 32rem),
+        linear-gradient(145deg,var(--bg),var(--bg2) 52%,#08101f);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto}
+    .skip-link{
+      position:absolute;left:-999px;top:12px;background:#fff;color:#111;padding:10px 14px;border-radius:10px;z-index:99
+    }
+    .skip-link:focus{left:12px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 13px;border:1px solid rgba(125,211,252,.28);
+      background:rgba(79,140,255,.12);border-radius:999px;color:#d9edff;
+      font-size:14px;font-weight:650
+    }
+    .notice{
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(6,13,27,.68);backdrop-filter:blur(12px);
+    }
+    .notice .wrap{
+      min-height:42px;display:flex;align-items:center;justify-content:space-between;
+      gap:14px;font-size:14px;color:#d8e7ff;flex-wrap:wrap
+    }
+    .notice strong{color:var(--gold)}
+    kbd{
+      padding:2px 7px;border:1px solid rgba(255,255,255,.2);
+      border-bottom-color:rgba(255,255,255,.38);
+      border-radius:7px;background:#17223b;color:#fff;font-size:12px
+    }
+    header.nav{
+      position:sticky;top:0;z-index:40;
+      background:rgba(7,16,31,.72);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:74px;gap:18px
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:max-content}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,#2563eb,#60a5fa);
+      box-shadow:0 10px 28px rgba(37,99,235,.38);
+      font-size:22px
+    }
+    .brand-text{display:flex;flex-direction:column;line-height:1.15}
+    .brand-text b{font-size:20px;letter-spacing:-.02em}
+    .brand-text span{font-size:12px;color:var(--muted2);font-weight:650}
+    nav.links{
+      display:flex;align-items:center;justify-content:flex-end;gap:18px;flex-wrap:wrap;
+      font-size:15px;font-weight:650;color:#dbeafe
+    }
+    nav.links a{color:#dbeafe}
+    nav.links a:hover{color:#fff}
+    .nav-cta{
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:44px;padding:12px 20px;border-radius:999px;
+      border:1px solid transparent;font-weight:800;
+      transition:.22s ease;cursor:pointer;text-align:center
+    }
+    .btn-primary{
+      background:linear-gradient(145deg,#2563eb,#1d4ed8);
+      border-color:#60a5fa;color:#fff;
+      box-shadow:0 14px 30px rgba(37,99,235,.28), inset 0 1px 0 rgba(255,255,255,.18)
+    }
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 18px 38px rgba(37,99,235,.38)}
+    .btn-secondary{
+      background:rgba(17,29,53,.72);border-color:#355f9d;color:#e8f1ff
+    }
+    .btn-secondary:hover{background:#142646;border-color:#60a5fa}
+    .btn-ghost{
+      min-height:38px;padding:9px 14px;border-color:#2f4a73;color:#c7dbff;background:rgba(255,255,255,.03)
+    }
+    main{overflow:hidden}
+    .hero{padding:76px 0 36px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:center
+    }
+    .hero h1{
+      margin:18px 0 16px;
+      font-size:clamp(38px,6.2vw,72px);
+      line-height:1.06;letter-spacing:-.055em
+    }
+    .gradient-text{
+      background:linear-gradient(90deg,#fff 0%,#dbeafe 36%,#7dd3fc 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero-sub{
+      max-width:720px;color:var(--muted);
+      font-size:clamp(17px,2.1vw,21px);margin:0 0 26px
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}
+    .hero-note{display:flex;gap:12px;flex-wrap:wrap;color:#9fb6dc;font-size:14px}
+    .hero-note span{display:inline-flex;gap:6px;align-items:center}
+    .glass{
+      background:linear-gradient(180deg,rgba(17,29,53,.82),rgba(8,16,31,.72));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      position:relative;overflow:hidden
+    }
+    .glass:before{
+      content:"";position:absolute;inset:-1px;
+      background:radial-gradient(circle at 20% 0,rgba(96,165,250,.25),transparent 34%),
+      radial-gradient(circle at 80% 16%,rgba(125,211,252,.15),transparent 25%);
+      pointer-events:none
+    }
+    .hero-panel{padding:24px;min-height:500px}
+    .panel-content{position:relative;z-index:1}
+    .speed-card{
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(5,12,25,.52);border-radius:22px;padding:18px;margin-bottom:14px
+    }
+    .speed-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .speed-head b{font-size:16px}
+    .status-dot{display:inline-flex;align-items:center;gap:7px;color:#c8f9df;font-size:13px}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 7px rgba(53,211,153,.11)}
+    .route{
+      display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin:20px 0
+    }
+    .node{
+      border:1px solid rgba(125,211,252,.18);background:#0d1931;border-radius:18px;padding:14px;text-align:center
+    }
+    .node strong{display:block;font-size:20px}
+    .node span{color:var(--muted2);font-size:13px}
+    .arrow{color:var(--brand2);font-size:24px}
+    .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .metric{
+      background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:14px
+    }
+    .metric b{font-size:22px;display:block}
+    .metric span{color:var(--muted2);font-size:12px}
+    .section{padding:64px 0}
+    .section-head{max-width:760px;margin-bottom:28px}
+    .eyebrow{color:var(--brand2);font-weight:850;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+    h2{
+      margin:8px 0 10px;font-size:clamp(28px,3.6vw,44px);
+      line-height:1.16;letter-spacing:-.035em
+    }
+    .section-head p{margin:0;color:var(--muted);font-size:17px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:rgba(17,29,53,.66);border:1px solid rgba(125,211,252,.16);
+      border-radius:24px;padding:24px;box-shadow:0 16px 42px rgba(0,0,0,.18)
+    }
+    .card h3{margin:12px 0 8px;font-size:21px;line-height:1.25}
+    .card p{margin:0;color:var(--muted)}
+    .icon{
+      width:44px;height:44px;border-radius:15px;display:grid;place-items:center;
+      background:rgba(79,140,255,.15);border:1px solid rgba(125,211,252,.23);font-size:22px
+    }
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .plan{
+      padding:24px;border-radius:28px;
+      background:linear-gradient(180deg,rgba(17,29,53,.78),rgba(9,17,32,.74));
+      border:1px solid rgba(125,211,252,.18);
+      position:relative;overflow:hidden
+    }
+    .plan.featured{
+      border-color:#60a5fa;box-shadow:0 0 0 1px rgba(96,165,250,.18),0 24px 70px rgba(37,99,235,.2)
+    }
+    .tag{
+      display:inline-flex;padding:5px 11px;border-radius:999px;
+      background:rgba(246,196,83,.13);border:1px solid rgba(246,196,83,.26);
+      color:#ffe5a6;font-weight:800;font-size:12px;margin-bottom:12px
+    }
+    .plan h3{font-size:24px;margin:0 0 8px}
+    .price{font-size:48px;font-weight:900;letter-spacing:-.04em;line-height:1}
+    .price small{font-size:18px;color:var(--muted);font-weight:700}
+    .period{color:var(--muted2);margin:7px 0 15px}
+    .specs{list-style:none;padding:0;margin:18px 0 24px}
+    .specs li{
+      margin:11px 0;color:#d9e8ff;display:flex;gap:10px;align-items:flex-start
+    }
+    .specs li:before{content:"✓";color:var(--green);font-weight:900}
+    .plan .btn{width:100%;margin-top:auto}
+    .two-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .two-links a{
+      border:1px solid #2f4a73;border-radius:999px;padding:9px 8px;
+      text-align:center;color:#c4d8fa;font-size:13px;font-weight:750
+    }
+    .two-links a:hover{border-color:#60a5fa;color:#fff}
+    .content-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start}
+    .seo-copy{
+      padding:30px;border-radius:28px;background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.09)
+    }
+    .seo-copy h2{font-size:32px}
+    .seo-copy p,.seo-copy li{color:var(--muted)}
+    .seo-copy ul{padding-left:20px}
+    .blog-list{display:grid;gap:14px}
+    .blog-card{
+      display:flex;justify-content:space-between;align-items:center;gap:16px;
+      padding:18px 20px;border-radius:22px;background:rgba(17,29,53,.65);
+      border:1px solid rgba(125,211,252,.16)
+    }
+    .blog-card:hover{border-color:#60a5fa;background:rgba(20,38,70,.72)}
+    .blog-card b{display:block;margin-bottom:4px}
+    .blog-card span{color:var(--muted2);font-size:14px}
+    .download-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .download{
+      text-align:center;padding:22px 14px;border-radius:24px;
+      background:rgba(17,29,53,.65);border:1px solid rgba(125,211,252,.16)
+    }
+    .download:hover{border-color:#60a5fa;transform:translateY(-2px)}
+    .download .big{font-size:35px;margin-bottom:10px}
+    .download b{display:block;margin-bottom:6px}
+    .download span{font-size:13px;color:var(--muted2)}
+    .status-band{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center;
+      padding:28px;border-radius:30px;background:linear-gradient(90deg,rgba(37,99,235,.18),rgba(15,23,42,.58));
+      border:1px solid rgba(125,211,252,.18)
+    }
+    .faq{display:grid;gap:12px}
+    details{
+      background:rgba(17,29,53,.66);border:1px solid rgba(125,211,252,.16);
+      border-radius:18px;padding:16px 18px
+    }
+    summary{cursor:pointer;font-weight:850;color:#edf6ff}
+    details p{color:var(--muted);margin:10px 0 0}
+    .cta{
+      text-align:center;padding:46px 24px;border-radius:34px;
+      background:
+        radial-gradient(circle at 50% -20%,rgba(96,165,250,.26),transparent 38%),
+        linear-gradient(145deg,#101d36,#07101f);
+      border:1px solid rgba(125,211,252,.2);box-shadow:var(--shadow)
+    }
+    .cta h2{margin-top:0}
+    .cta p{max-width:720px;margin:0 auto 24px;color:var(--muted)}
+    footer{
+      padding:42px 0 52px;color:var(--muted2);border-top:1px solid rgba(255,255,255,.08)
+    }
+    .footer-grid{
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px
+    }
+    footer h3{color:#fff;margin:0 0 10px;font-size:16px}
+    footer a{display:block;color:var(--muted2);margin:7px 0}
+    footer a:hover{color:#fff}
+    .copyright{margin-top:26px;font-size:13px}
+    @media (max-width:960px){
+      .hero-grid,.content-grid,.status-band{grid-template-columns:1fr}
+      .cards,.pricing{grid-template-columns:1fr}
+      .download-grid{grid-template-columns:repeat(2,1fr)}
+      nav.links{display:none}
+    }
+    @media (max-width:560px){
+      .notice .wrap{justify-content:center;text-align:center}
+      .nav-inner{flex-direction:column;align-items:stretch;padding:12px 0}
+      .brand{justify-content:center}
+      .nav-cta{justify-content:center}
+      .hero{padding-top:48px}
+      .metric-grid,.download-grid,.two-links{grid-template-columns:1fr}
+      .hero-actions .btn{width:100%}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- JSON-LD: Organization + Website + Service + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://oumei.lat/#organization",
+        "name": "Oumei.tat 欧米伽",
+        "url": "https://oumei.lat/",
+        "description": "全球网络加速与低延迟跨境连接服务。",
+        "sameAs": [
+          "https://t.me/Oumei_tat_official",
+          "https://t.me/dasheng_guilai666"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://oumei.lat/#website",
+        "url": "https://oumei.lat/",
+        "name": "Oumei.tat 欧米伽",
+        "publisher": { "@id": "https://oumei.lat/#organization" },
+        "inLanguage": "zh-CN"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://oumei.lat/#service",
+        "name": "全球网络加速服务",
+        "provider": { "@id": "https://oumei.lat/#organization" },
+        "areaServed": "Worldwide",
+        "serviceType": "Network acceleration service",
+        "description": "提供跨境低延迟网络优化、多端客户端连接、流媒体访问优化与游戏低延迟连接方案。",
+        "offers": {
+          "@type": "OfferCatalog",
+          "name": "网络加速套餐",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "标准弹性计划",
+              "price": "12",
+              "priceCurrency": "CNY",
+              "description": "月付150GB高速数据额度。"
+            },
+            {
+              "@type": "Offer",
+              "name": "旗舰性价比计划",
+              "price": "58",
+              "priceCurrency": "CNY",
+              "description": "年付200GB/月高速数据额度。"
+            },
+            {
+              "@type": "Offer",
+              "name": "弹性无期包",
+              "price": "75",
+              "priceCurrency": "CNY",
+              "description": "一次性500GB数据包。"
+            }
+          ]
         }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(59, 130, 246, 0.18);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            padding: 6px 18px;
-            border-radius: 60px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #bdd3ff;
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            margin-bottom: 18px;
-        }
-        .hero h1 {
-            font-size: clamp(2.4rem, 10vw, 3.8rem);
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            background: linear-gradient(to right, #ffffff, #d9e6ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 12px;
-        }
-        .hero-highlight {
-            color: #60a5fa;
-            text-shadow: 0 0 20px #3b82f666;
-        }
-        .hero-sub {
-            font-size: 1.2rem;
-            color: #b0c8f0;
-            margin-bottom: 28px;
-        }
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        /* 按钮 */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.25s;
-            border: 1px solid transparent;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background: linear-gradient(145deg, #2563eb, #1e40af);
-            color: white;
-            box-shadow: 0 12px 24px -8px #1e3a8a80, 0 0 0 1px #3b82f6 inset;
-            border: 1px solid #6094f0;
-        }
-        .btn-primary:hover {
-            background: linear-gradient(145deg, #3b82f6, #2563eb);
-            box-shadow: 0 18px 28px -10px #1e4bd2;
-            transform: scale(1.02);
-        }
-        .btn-outline {
-            background: rgba(20, 35, 60, 0.7);
-            border: 1px solid #3b6cb0;
-            color: #e2ecff;
-        }
-        .btn-outline:hover {
-            background: #1f3150;
-            border-color: #6094f0;
-        }
-        /* 服务计划列表（套餐区域） */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 48px 0 24px;
-            letter-spacing: -0.01em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title i {
-            color: #60a5fa;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 20px;
-        }
-        .price-card {
-            padding: 24px 20px;
-            transition: transform 0.2s;
-            border: 1px solid rgba(96, 165, 250, 0.25);
-            background: rgba(12, 22, 40, 0.7);
-            display: flex;
-            flex-direction: column;
-        }
-        .price-card:hover {
-            transform: translateY(-6px);
-            border-color: #3b82f6;
-            box-shadow: 0 24px 40px -12px #0f1a2f;
-        }
-        .price-tag {
-            display: inline-block;
-            background: #1e3a8a;
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #bfdbfe;
-            margin-bottom: 14px;
-            align-self: flex-start;
-        }
-        .price-name {
-            font-size: 1.7rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: white;
-        }
-        .price-amount {
-            font-size: 2.6rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 6px;
-        }
-        .price-amount small {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #9ab9f0;
-        }
-        .price-period {
-            font-size: 0.95rem;
-            color: #a0bbdf;
-            margin-bottom: 8px;
-        }
-        .daily-cost {
-            background: rgba(59, 130, 246, 0.15);
-            border-radius: 40px;
-            padding: 6px 12px;
-            margin: 12px 0 16px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #fbbf24;
-            display: inline-block;
-            border: 1px dashed #3b82f6;
-        }
-        .monthly-data {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #d3e2fd;
-            margin-bottom: 16px;
-            border-bottom: 1px dashed #2e4570;
-            padding-bottom: 14px;
-        }
-        .monthly-data i {
-            color: #60a5fa;
-            margin-right: 6px;
-        }
-        .price-spec {
-            list-style: none;
-            margin: 8px 0 22px;
-            flex: 1;
-        }
-        .price-spec li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 12px;
-            color: #d3e2fd;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        .price-spec i {
-            color: #34d399;
-            font-size: 1rem;
-            width: 20px;
-            margin-top: 2px;
-        }
-        .spec-highlight {
-            color: #fbbf24;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-left: 4px;
-        }
-        .badge-refund {
-            background: #1e3a5f;
-            color: #b0d0ff;
-            font-size: 0.7rem;
-            padding: 2px 10px;
-            border-radius: 20px;
-            margin-left: 6px;
-        }
-        .card-footer {
-            margin-top: auto;
-        }
-        .price-card .btn {
-            width: 100%;
-            padding: 13px 8px;
-            font-size: 1rem;
-        }
-        .card-actions-split {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .card-actions-split .btn-sub-action {
-            flex: 1;
-            text-align: center;
-            padding: 8px 4px;
-            font-size: 0.85rem;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 500;
-            border: 1px solid #2e4570;
-            color: #9ab9f0;
-            transition: all 0.2s;
-        }
-        .card-actions-split .btn-sub-action:hover {
-            border-color: #60a5fa;
-            color: #fff;
-            background: rgba(30, 50, 80, 0.3);
-        }
-        .tg-link-area {
-            font-size: 0.8rem;
-            margin-top: 12px;
-            text-align: center;
-        }
-        .tg-link-area a {
-            color: #6b8bb0;
-            text-decoration: none;
-            border-bottom: 1px dotted #3b6cb0;
-        }
-        /* 更多方案入口 */
-        .view-all-plans {
-            text-align: center;
-            margin: 16px 0 32px;
-        }
-        .view-all-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(30, 50, 80, 0.6);
-            padding: 12px 28px;
-            border-radius: 60px;
-            color: #c6dcff;
-            text-decoration: none;
-            font-weight: 500;
-            border: 1px solid #3f6190;
-            transition: all 0.2s;
-        }
-        .view-all-link:hover {
-            background: #1f3a5f;
-            border-color: #6094f0;
-            color: white;
-        }
-        /* 客户端网格 */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin: 24px 0 16px;
-        }
-        .feature-card {
-            padding: 24px 16px;
-            background: rgba(16, 26, 45, 0.6);
-            border-radius: 24px;
-            text-align: center;
-            border: 1px solid #2a3f60;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s;
-        }
-        .feature-card:hover {
-            border-color: #60a5fa;
-            transform: translateY(-4px);
-        }
-        .feature-icon {
-            font-size: 2.2rem;
-            margin-bottom: 16px;
-            color: #60a5fa;
-        }
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .feature-card p {
-            font-size: 0.9rem;
-            color: #b8cef0;
-            line-height: 1.4;
-        }
-        /* 官网入口与状态条 */
-        .special-region {
-            background: linear-gradient(90deg, #13203a 0%, #1e2f50 100%);
-            border-radius: 60px;
-            padding: 14px 24px;
-            margin: 32px 0 24px;
-            border: 1px solid #3f6190;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px 24px;
-            justify-content: center;
-        }
-        .special-region i {
-            font-size: 1.4rem;
-            color: #fbbf24;
-        }
-        .region-text {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        .entrance-badge {
-            background: #2d4a7c;
-            padding: 6px 14px;
-            border-radius: 40px;
-            color: white;
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .entrance-badge:hover {
-            background: #3b62a3;
-        }
-        /* 底部CTA */
-        .cta-banner {
-            margin: 48px 0 32px;
-            padding: 40px 32px;
-            text-align: center;
-            background: linear-gradient(145deg, #101f33, #0b1625);
-            border: 1px solid #2e5a9c;
-        }
-        .cta-banner h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .cta-btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 24px;
-            flex-wrap: wrap;
-        }
-        /* 页脚链接 */
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 28px;
-            margin: 24px 0 10px;
-        }
-        .footer-links a {
-            color: #aac3e6;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .footer-links a:hover {
-            color: white;
-        }
-        .copyright {
-            text-align: center;
-            color: #6b8bb0;
-            margin-top: 20px;
-            font-size: 0.85rem;
-        }
-        /* 响应式 */
-        @media (max-width: 900px) {
-            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .pricing-grid { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
-            .navbar { flex-direction: column; align-items: center; gap: 12px; }
-            .nav-links { justify-content: center; }
-            .hero h1 { font-size: 2.4rem; }
-            .cta-btn-group { flex-direction: column; align-items: stretch; }
-        }
-        i { margin-right: 4px; }
-    </style>
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://oumei.lat/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Oumei.tat适合哪些使用场景？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "适合流媒体访问优化、游戏低延迟、AI工具连接、跨境办公和多端网络连接场景。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "是否支持Windows、Android、iOS和macOS？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "首页提供Windows、Android、iOS和macOS客户端入口，实际可用版本以服务端公告为准。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "套餐是否支持低频轻量使用？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "支持。月付、年付和按量包分别适合短期体验、长期使用和低频备用。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
-<div class="page-wrapper">
+  <a href="#main" class="skip-link">跳转到正文</a>
 
-    <!-- 顶部状态栏 -->
-    <div class="notice-bar">
-        <span><i class="fa-solid fa-bell animate-pulse text-green-400"></i> 全线骨干中转物理拓扑节点正在以最高速度稳定运行中</span>
-        <span>防失联建议：请按下 <kbd>Ctrl + D</kbd> 收藏本页</span>
+  <div class="notice">
+    <div class="wrap">
+      <span>🚀 <strong>全线骨干中转拓扑运行中</strong>：建议收藏本页，防止入口变更。</span>
+      <span>快捷收藏：<kbd>Ctrl</kbd> + <kbd>D</kbd></span>
     </div>
+  </div>
 
-    <!-- 导航栏（已完全分离登录/邀请注册） -->
-    <header class="navbar">
-        <div class="logo-area">
-            <span class="logo-icon">🚀</span>
-            <span class="logo-text">Oumei.tat</span>
-            <span class="logo-sub">欧米伽</span>
-        </div>
-        <div class="nav-links">
-            <a href="https://t.me/dasheng_guilai666" target="_blank" class="nav-link"><i class="fab fa-telegram-plane"></i> 技术群组</a>
-            <a href="https://t.me/t.me/dasheng_guilai666" target="_blank" class="nav-link"><i class="fas fa-chart-line"></i> 拓扑测速</a>
-            <a href="https://t.me/t.me/dasheng_guilai666" target="_blank" class="nav-link"><i class="fas fa-file-invoice-dollar"></i> 详细计划</a>
-            <!-- 彻底分流 -->
-            <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="nav-link nav-btn-login"><i class="fas fa-sign-in-alt"></i> 安全登录</a>
-            <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="nav-link nav-btn-register"><i class="fas fa-key"></i> 安全注册</a>
-        </div>
-    </header>
+  <header class="nav" aria-label="网站导航">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Oumei.tat首页">
+        <span class="brand-mark">Ω</span>
+        <span class="brand-text">
+          <b>Oumei.tat</b>
+          <span>欧米伽全球网络加速</span>
+        </span>
+      </a>
 
-    <!-- Hero 主视觉 -->
+      <nav class="links" aria-label="主导航">
+        <a href="#plans">套餐</a>
+        <a href="#downloads">客户端</a>
+        <a href="#guides">教程</a>
+        <a href="#faq">FAQ</a>
+        <a href="/status.html">状态页</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">安全登录</a>
+        <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">受邀注册</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
     <section class="hero">
-        <div class="hero-badge">
-            <i class="fas fa-bolt"></i> 高效全球数据传输方案 · 30+ 工业级中转拓扑
+      <div class="wrap hero-grid">
+        <div>
+          <span class="pill">⚡ 30+ 工业级中转拓扑 · 多端可用</span>
+          <h1><span class="gradient-text">全球网络加速服务</span><br>稳定低延迟跨境连接方案</h1>
+          <p class="hero-sub">
+            Oumei.tat 欧米伽面向流媒体、AI工具、游戏与跨境办公场景，提供轻量、稳定、低延迟的全球网络连接优化方案。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">凭受邀码开启体验</a>
+            <a class="btn btn-secondary" href="#plans">查看套餐与额度</a>
+          </div>
+          <div class="hero-note" aria-label="服务特点">
+            <span>✓ 月付 / 年付 / 按量包</span>
+            <span>✓ Windows / Android / iOS / macOS</span>
+            <span>✓ 支持流媒体访问优化</span>
+          </div>
         </div>
-        <h1>
-            <span class="hero-highlight">每天一毛钱</span><br>
-            无界连接全球网络
-        </h1>
-        <div class="hero-sub">
-            高端跨境链路 · 专属动态QoS调度 · 4K流媒体配置
-        </div>
-        <div class="hero-actions">
-            <!-- Hero 双动作分流 -->
-            <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn btn-outline" style="border-radius: 60px; padding: 14px 36px;">
-                <i class="fas fa-desktop"></i> 已有账号 · 安全登录
-            </a>
-            <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary" style="padding: 14px 36px;">
-                <i class="fas fa-key"></i> 凭受邀码注册 · 开启体验
-            </a>
-        </div>
+
+        <aside class="glass hero-panel" aria-label="全球网络加速状态示意">
+          <div class="panel-content">
+            <div class="speed-card">
+              <div class="speed-head">
+                <b>网络状态</b>
+                <span class="status-dot"><span class="dot"></span> 稳定运行</span>
+              </div>
+              <div class="route">
+                <div class="node"><strong>CN</strong><span>本地终端</span></div>
+                <div class="arrow">→</div>
+                <div class="node"><strong>Global</strong><span>优化节点</span></div>
+              </div>
+              <p style="margin:0;color:var(--muted);font-size:14px">
+                通过多区域节点与动态QoS调度，降低跨境链路拥堵对访问体验的影响。
+              </p>
+            </div>
+
+            <div class="metric-grid">
+              <div class="metric"><b>30+</b><span>拓扑节点</span></div>
+              <div class="metric"><b>4端</b><span>客户端入口</span></div>
+              <div class="metric"><b>24h</b><span>体验保障</span></div>
+            </div>
+
+            <div class="speed-card" style="margin-top:14px">
+              <b>适合场景</b>
+              <ul class="specs" style="margin-bottom:0">
+                <li>Netflix / YouTube 等流媒体访问体验优化</li>
+                <li>ChatGPT / AI工具网络连接优化</li>
+                <li>Steam / 游戏低延迟线路优化</li>
+                <li>远程办公、资料检索和跨境学习</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- 精选数据计划 -->
-    <div class="section-title">
-        <i class="fas fa-gem"></i> 精选数据计划 · 限时特惠
-        <span style="margin-left: auto; font-size: 0.9rem; font-weight: 400;">
-            <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" style="color:#9ab9f0;"><i class="fas fa-chart-line"></i> 实时延迟监控 (TG)说明</a>
-        </span>
-    </div>
-    <div class="pricing-grid">
-        <!-- 月付计划 -->
-        <div class="price-card">
-            <span class="price-tag"><i class="far fa-calendar-alt"></i> 灵活月付 · 标准型</span>
-            <div class="price-name">标准弹性计划</div>
-            <div class="price-amount">12 <small>元</small></div>
-            <div class="price-period">/月付 · 每月按时重置</div>
-            <div class="monthly-data">
-                <i class="fas fa-bolt"></i> 每月 150GB 高速数据额度
-            </div>
-            <ul class="price-spec">
-                <li><i class="fas fa-database"></i> 150G基础额度 <span class="spec-highlight">(低倍率下最高280G)</span></li>
-                <li><i class="fas fa-infinity"></i> 终端连接无设备数限制</li>
-                <li><i class="fas fa-film"></i> 全自动化智能流媒体重定向</li>
-                <li><i class="fas fa-shield-alt"></i> 高级 V2 加密协议拓扑 <span class="badge-refund">24h无忧保障</span></li>
-            </ul>
-            <div class="card-footer">
-                <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">注册购买</a>
-                <div class="card-actions-split">
-                    <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn-sub-action"><i class="fas fa-sign-in-alt"></i> 老用户登录</a>
-                    <a href="https://t.me/haoyifly" target="_blank" class="btn-sub-action"><i class="fas fa-eye"></i> 延迟测速</a>
-                </div>
-            </div>
+    <section class="section" id="benefits">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Why Oumei.tat</span>
+          <h2>不是单纯“节点列表”，而是完整的网络访问体验优化</h2>
+          <p>首页内容面向搜索引擎和真实用户同时优化：关键词明确、结构清晰、转化路径短。</p>
         </div>
 
-        <!-- 年付人气爆款 -->
-        <div class="price-card" style="border-color: #3b82f6; box-shadow: 0 0 20px rgba(30, 75, 210, 0.2);">
-            <span class="price-tag" style="background: #b45309;"><i class="fas fa-crown"></i> 长期特享 · 年度爆款</span>
-            <div class="price-name">旗舰性价比计划</div>
-            <div class="price-amount">58 <small>元</small></div>
-            <div class="price-period">/年付 · 每月尊享</div>
-            <div class="daily-cost">
-                <i class="fas fa-clock"></i> ≈ 每天 0.13 元 · 月享达 285GB (低倍率)
-            </div>
-            <div class="monthly-data" style="margin-top: 6px;">
-                <i class="fas fa-gem"></i> 每月固定 200GB ~ 285GB 极速额度
-            </div>
-            <ul class="price-spec">
-                <li><i class="fas fa-database"></i> 200G/月纯净额度 <span class="spec-highlight">(低倍率最高285G)</span></li>
-                <li><i class="fas fa-infinity"></i> 终端连接无设备数限制</li>
-                <li><i class="fas fa-film"></i> 全球全节点流媒体底层解锁</li>
-                <li><i class="fas fa-shield-alt"></i> 骨干 V1 安全协议拓扑 <span class="badge-refund">24h无忧保障</span></li>
-            </ul>
-            <div class="card-footer">
-                <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">使用受邀码注册购买</a>
-                <div class="card-actions-split">
-                    <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn-sub-action"><i class="fas fa-sign-in-alt"></i> 老用户登录</a>
-                    <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" class="btn-sub-action"><i class="fas fa-eye"></i> 延迟测速</a>
-                </div>
-            </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🌐</div>
+            <h3>全球节点与路径优化</h3>
+            <p>根据使用场景选择更合适的线路，减少跨境访问中的绕路、拥堵和不稳定问题。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎬</div>
+            <h3>流媒体访问体验</h3>
+            <p>针对视频、直播和内容平台访问进行网络层优化，提升加载速度和播放稳定性。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎮</div>
+            <h3>低延迟游戏连接</h3>
+            <p>适合对延迟敏感的游戏、实时通信和远程协作场景，降低连接波动感。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plans">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>精选数据计划</h2>
+          <p>保留你原XBoard落地页的三档套餐结构：月付、年付、按量包，适合不同使用频率。</p>
         </div>
 
-        <!-- 按量付费 -->
-        <div class="price-card">
-            <span class="price-tag"><i class="fas fa-box"></i> 纯享按量 · 不设时限</span>
-            <div class="price-name">弹性无期包</div>
-            <div class="price-amount">75 <small>元</small></div>
-            <div class="price-period">/一次性付费 · 用完为止</div>
-            <div class="monthly-data">
-                <i class="fas fa-infinity"></i> 500GB 全量数据 · 永不过期
-            </div>
-            <ul class="price-spec">
-                <li><i class="fas fa-database"></i> 500G 纯享总量 <span class="spec-highlight">(低倍率下最高714G)</span></li>
-                <li><i class="fas fa-infinity"></i> 终端连接无设备数限制</li>
-                <li><i class="fas fa-film"></i> 全自动化智能流媒体重定向</li>
-                <li><i class="fas fa-shield-alt"></i> 高级 V2 加密协议拓扑 <span class="badge-refund">24h无忧保障</span></li>
+        <div class="pricing">
+          <article class="plan">
+            <span class="tag">灵活月付</span>
+            <h3>标准弹性计划</h3>
+            <div class="price">12 <small>元/月</small></div>
+            <p class="period">每月按时重置</p>
+            <ul class="specs">
+              <li>每月150GB高速数据额度</li>
+              <li>低倍率下最高约280GB</li>
+              <li>终端连接不限制设备数</li>
+              <li>适合短期体验和轻量用户</li>
             </ul>
-            <div class="card-footer">
-                <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">使用受邀码注册购买</a>
-                <div class="card-actions-split">
-                    <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn-sub-action"><i class="fas fa-sign-in-alt"></i> 老用户登录</a>
-                    <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" class="btn-sub-action"><i class="fas fa-eye"></i> 延迟测速</a>
-                </div>
+            <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">注册购买</a>
+            <div class="two-links">
+              <a href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">老用户登录</a>
+              <a href="https://t.me/haoyifly" target="_blank" rel="noopener nofollow">延迟测速</a>
             </div>
+          </article>
+
+          <article class="plan featured">
+            <span class="tag">年度爆款</span>
+            <h3>旗舰性价比计划</h3>
+            <div class="price">58 <small>元/年</small></div>
+            <p class="period">约每天0.13元</p>
+            <ul class="specs">
+              <li>每月200GB纯净额度</li>
+              <li>低倍率最高约285GB</li>
+              <li>全球节点与流媒体访问优化</li>
+              <li>适合长期稳定使用</li>
+            </ul>
+            <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">使用受邀码注册</a>
+            <div class="two-links">
+              <a href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">老用户登录</a>
+              <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" rel="noopener nofollow">拓扑监控</a>
+            </div>
+          </article>
+
+          <article class="plan">
+            <span class="tag">按量无期</span>
+            <h3>弹性无期包</h3>
+            <div class="price">75 <small>元/次</small></div>
+            <p class="period">500GB，用完为止</p>
+            <ul class="specs">
+              <li>500GB全量数据包</li>
+              <li>低倍率最高约714GB</li>
+              <li>适合低频备用和长期慢用</li>
+              <li>无需每月固定续费</li>
+            </ul>
+            <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">注册购买</a>
+            <div class="two-links">
+              <a href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">老用户登录</a>
+              <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" rel="noopener nofollow">延迟测速</a>
+            </div>
+          </article>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- 更多方案入口 -->
-    <div class="view-all-plans">
-        <a href="https://t.me/Oumei.tat_knowledge/5" target="_blank" class="view-all-link">
-            <i class="fas fa-table-list"></i> 需要更大流量或更多高阶定制？查看全部计划与拓扑对比 →
-        </a>
-    </div>
+    <section class="section" id="guides">
+      <div class="wrap content-grid">
+        <article class="seo-copy">
+          <span class="eyebrow">SEO Content</span>
+          <h2>什么是全球网络加速服务？</h2>
+          <p>
+            全球网络加速服务通过优化跨境访问路径、选择更合适的中转节点与线路策略，改善海外网站、流媒体、AI工具、游戏平台和远程办公服务的连接体验。
+          </p>
+          <p>
+            对搜索用户来说，常见需求包括“网络加速器推荐”“VPN替代方案”“Netflix访问优化”“ChatGPT网络错误修复”“游戏延迟高怎么办”等。本站通过教程内容与套餐入口结合，形成自然搜索流量到XBoard注册页的转化路径。
+          </p>
+          <ul>
+            <li>搜索入口：教程 / FAQ / 状态页</li>
+            <li>转化入口：套餐页 / 注册按钮 / 客户端下载</li>
+            <li>信任入口：TG公告 / 延迟测速 / 常见问题</li>
+          </ul>
+        </article>
 
-    <!-- 多端全自动客户端下载 -->
-    <div class="section-title">
-        <i class="fas fa-cloud-download-alt"></i> 多端全能自动化客户端下载
-    </div>
-    <div class="features-grid">
-        <a href="https://sub-1.oumiga.xyz/apps/H%E5%8A%A0%E9%80%9F%E5%99%A8%E7%BB%BF%E8%89%B2%E7%89%88.zip" target="_blank" class="feature-card">
-            <div class="feature-icon"><i class="fab fa-windows"></i></div>
-            <h3>Windows 桌面端</h3>
-            <p>全自动PC客户端，独立解压即用，支持一键智能负载均衡。</p>
-        </a>
-        <a href="https://sub-1.oumeiga.xyz/apps/orange-v2.apk" class="feature-card">
-            <div class="feature-icon" style="color: #4ade80;"><i class="fab fa-android"></i></div>
-            <h3>Android 安卓手机端</h3>
-            <p>原生手机端一键连接，极低内存消耗，全天候长连接不掉线。</p>
-        </a>
-        <a href="https://testflight.apple.com/join/YOUR_TESTFLIGHT_CODE" target="_blank" class="feature-card">
-            <div class="feature-icon" style="color: #c084fc;"><i class="fab fa-apple"></i></div>
-            <h3>iOS 苹果端</h3>
-            <p>提供系统级高度契合的测试配置，无缝嵌入系统底层路由。</p>
-        </a>
-        <a href="https://wwbxd.lanzouu.com/ibF8d3pv1leb" target="_blank" class="feature-card">
-            <div class="feature-icon" style="color: #60a5fa;"><i class="fas fa-desktop"></i></div>
-            <h3>macOS 电脑端</h3>
-            <p>高阶独立副本，全链路极致精炼（解压密码：1234）。</p>
-        </a>
-    </div>
-
-    <!-- 统一容灾官网入口快捷跳转（纯登录业务） -->
-    <div class="special-region">
-        <i class="fas fa-shield-halved"></i>
-        <span class="region-text"><strong>已有账号登录通道（容灾备份）：</strong> ➔ </span>
-        <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="entrance-badge">主站入口 1</a>
-        <a href="https://n1.huaguoshan.qzz.io/#/login" target="_blank" class="entrance-badge">分流入口 2</a>
-        <a href="https://oneday.dudupao.dpdns.org//#/login" target="_blank" class="entrance-badge" style="background: #059669;">极速专线 3</a>
-    </div>
-
-    <!-- 底部大号召 -->
-    <div class="cta-banner">
-        <h2>💎 稳定品质 · 尊享无忧体验</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 8px; color: #ccdfff;">全站实施邀请准入制 · 数据采用端到端隔离加密</p>
-        <div class="cta-btn-group">
-            <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" class="btn btn-primary">
-                <i class="fas fa-key"></i> 持受邀码前往注册
+        <div>
+          <div class="section-head" style="margin-bottom:16px">
+            <span class="eyebrow">Popular Guides</span>
+            <h2 style="font-size:32px">热门网络优化教程</h2>
+            <p>这些内链用于承接Google长尾搜索词，后续可以逐步补全文章页。</p>
+          </div>
+          <div class="blog-list">
+            <a class="blog-card" href="/blog/vpn-alternative.html">
+              <span><b>VPN替代方案：稳定低延迟海外网络连接方法</b><span>关键词：VPN替代、网络加速器、海外网络</span></span>
+              <strong>→</strong>
             </a>
-            <a href="https://lucky.abc2028.xyz/#/login" target="_blank" class="btn btn-outline">
-                <i class="fas fa-sign-in-alt"></i> 老用户登录控制台
+            <a class="blog-card" href="/blog/netflix-unblock.html">
+              <span><b>Netflix访问体验优化：地区内容与播放卡顿解决思路</b><span>关键词：Netflix优化、流媒体访问、节点选择</span></span>
+              <strong>→</strong>
             </a>
+            <a class="blog-card" href="/blog/game-latency.html">
+              <span><b>游戏延迟高怎么办？降低Ping与稳定连接的3种方法</b><span>关键词：游戏加速、降低Ping、低延迟节点</span></span>
+              <strong>→</strong>
+            </a>
+            <a class="blog-card" href="/blog/chatgpt-fix.html">
+              <span><b>ChatGPT网络错误与连接失败的排查方法</b><span>关键词：ChatGPT网络错误、AI工具连接优化</span></span>
+              <strong>→</strong>
+            </a>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- 页脚链接 -->
-    <div class="footer-links">
-        <a href="https://lucky.abc2028.xyz/#/login" target="_blank"><i class="fas fa-desktop"></i> 统一登录</a>
-        <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank"><i class="fas fa-key"></i> 邀请注册</a>
-        <a href="https://t.me/Oumei.tat_official" target="_blank"><i class="fab fa-telegram"></i> 官方技术交流群</a>
-        <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank"><i class="fas fa-chart-line"></i> 延迟测速监控</a>
-    </div>
-    <div class="copyright">
-        © 2026 Oumei.tat 全球网络技术实验室. All Rights Reserved. Data isolated via end-to-end TLS.
-    </div>
-</div>
+    <section class="section" id="downloads">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Clients</span>
+          <h2>多平台客户端下载</h2>
+          <p>保留原页面的多端下载入口，方便用户从SEO首页直接完成安装路径。</p>
+        </div>
 
-<!-- 继承您的在线 Crisp 客服系统会话代码 -->
-<script type="text/javascript">
-    window.$crisp=[];
-    window.CRISP_WEBSITE_ID="5079ece8-b407-499c-93ac-a7b905284ce3";
-    (function(){
-        d=document;
-        s=d.createElement("script");
-        s.src="https://client.crisp.chat/l.js";
-        s.async=1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-</script>
+        <div class="download-grid">
+          <a class="download" href="https://sub-1.oumiga.xyz/apps/H%E5%8A%A0%E9%80%9F%E5%99%A8%E7%BB%BF%E8%89%B2%E7%89%88.zip" target="_blank" rel="noopener">
+            <div class="big">🪟</div>
+            <b>Windows桌面端</b>
+            <span>解压即用，一键连接</span>
+          </a>
+          <a class="download" href="https://sub-1.oumeiga.xyz/apps/orange-v2.apk" target="_blank" rel="noopener">
+            <div class="big">🤖</div>
+            <b>Android安卓端</b>
+            <span>手机端轻量连接</span>
+          </a>
+          <a class="download" href="https://testflight.apple.com/join/YOUR_TESTFLIGHT_CODE" target="_blank" rel="noopener nofollow">
+            <div class="big">🍎</div>
+            <b>iOS苹果端</b>
+            <span>测试版本入口</span>
+          </a>
+          <a class="download" href="https://wwbxd.lanzouu.com/ibF8d3pv1leb" target="_blank" rel="noopener">
+            <div class="big">💻</div>
+            <b>macOS电脑端</b>
+            <span>解压密码：1234</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="status">
+      <div class="wrap">
+        <div class="status-band">
+          <div>
+            <span class="eyebrow">Status & Backup</span>
+            <h2 style="font-size:34px">已有账号登录与容灾入口</h2>
+            <p style="color:var(--muted);margin:0">
+              如果主入口暂时不可用，可通过备用入口登录控制台。建议用户收藏SEO首页与官方TG公告页。
+            </p>
+          </div>
+          <div class="hero-actions" style="justify-content:flex-end;margin:0">
+            <a class="btn btn-secondary" href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">主站入口1</a>
+            <a class="btn btn-secondary" href="https://n1.huaguoshan.qzz.io/#/login" target="_blank" rel="noopener">分流入口2</a>
+            <a class="btn btn-primary" href="https://oneday.dudupao.dpdns.org//#/login" target="_blank" rel="noopener">极速专线3</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>常见问题</h2>
+          <p>FAQ既能减少售前沟通，也能增强Google对页面主题的理解。</p>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>Oumei.tat适合哪些用户？</summary>
+            <p>适合需要稳定访问海外服务、流媒体平台、AI工具、游戏平台和跨境办公服务的用户。轻量用户可以选择月付，长期用户更适合年付计划。</p>
+          </details>
+          <details>
+            <summary>这个首页和XBoard业务站是什么关系？</summary>
+            <p>这个首页是SEO流量入口，负责让Google/Bing收录和承接自然搜索；注册、登录、支付和订阅管理仍然跳转到XBoard业务站完成。</p>
+          </details>
+          <details>
+            <summary>为什么要做Blog教程页？</summary>
+            <p>Google自然流量主要来自长尾问题，例如“游戏延迟高怎么办”“ChatGPT网络错误怎么修复”“Netflix播放卡顿怎么解决”。Blog页负责承接这些搜索词，再通过内链导向套餐页。</p>
+          </details>
+          <details>
+            <summary>是否支持多设备连接？</summary>
+            <p>套餐说明中包含终端连接无设备数限制，但实际连接体验会受套餐额度、客户端配置和网络环境影响，建议以后台公告和使用说明为准。</p>
+          </details>
+          <details>
+            <summary>如何查看线路延迟和公告？</summary>
+            <p>可以通过页面中的延迟测速、拓扑监控和Telegram公告入口查看最新信息。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta">
+          <span class="pill">💎 邀请准入 · 稳定体验 · 多端连接</span>
+          <h2>从SEO首页进入，直接跳转XBoard完成注册</h2>
+          <p>这个首页负责承接自然搜索用户，XBoard负责账户、套餐、订阅和支付。两层分离后，既能提升搜索收录，又不影响原有面板业务。</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">持受邀码注册</a>
+            <a class="btn btn-secondary" href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">老用户登录</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Oumei.tat 欧米伽</h3>
+        <p style="margin:0">全球网络加速与低延迟跨境连接方案。SEO首页用于自然搜索引流，业务操作跳转XBoard完成。</p>
+      </div>
+      <div>
+        <h3>站内链接</h3>
+        <a href="/pricing.html">套餐方案</a>
+        <a href="/faq.html">常见问题</a>
+        <a href="/status.html">节点状态</a>
+        <a href="/blog/vpn-alternative.html">VPN替代方案</a>
+      </div>
+      <div>
+        <h3>外部入口</h3>
+        <a href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">统一登录</a>
+        <a href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">邀请注册</a>
+        <a href="https://t.me/Oumei.tat_official" target="_blank" rel="noopener nofollow">官方技术交流群</a>
+        <a href="https://t.me/Oumei.tat_knowledge/43" target="_blank" rel="noopener nofollow">延迟测速监控</a>
+      </div>
+    </div>
+    <div class="wrap copyright">
+      © 2026 Oumei.tat 全球网络技术实验室. All Rights Reserved. Data isolated via end-to-end TLS.
+    </div>
+  </footer>
+
+  <!-- 可选：保留你的 Umami 统计。如部署域名不同，请确认 data-website-id 是否对应 -->
+  <script defer src="https://stats.oumiga.xyz/script.js" data-website-id="bf204d0c-8fe3-457a-8d71-cf1d48a3a309"></script>
+
+  <!-- 可选：Crisp客服延迟加载，减少首屏性能影响 -->
+  <script>
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        window.$crisp = window.$crisp || [];
+        window.CRISP_WEBSITE_ID = "5079ece8-b407-499c-93ac-a7b905284ce3";
+        var d = document;
+        var s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.head.appendChild(s);
+      }, 1800);
+    });
+  </script>
 </body>
 </html>
