@@ -2,53 +2,534 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+
 <title>全球网络加速服务｜低延迟海外网络连接｜Oumei.tat 欧米伽</title>
-<meta name="description" content="Oumei.tat 欧米伽提供全球网络加速、低延迟节点、流媒体访问优化、游戏加速与AI工具连接方案。">
-<meta name="keywords" content="全球网络加速,网络加速器,VPN替代方案,低延迟节点">
+<meta name="description" content="Oumei.tat 欧米伽提供全球网络加速、低延迟节点、流媒体访问优化、游戏加速、ChatGPT与AI工具连接方案。支持月付、年付、按量包，多端客户端与备用入口。">
+<meta name="keywords" content="全球网络加速, 网络加速器, VPN替代方案, 低延迟节点, 海外网络加速, 流媒体访问优化, ChatGPT网络错误, 游戏加速, XBoard">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
-<link rel="canonical" href="https://oumei.lat/">
+<link rel="canonical" href="https://yourdomain.com/">
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="全球网络加速服务｜低延迟海外网络连接｜Oumei.tat 欧米伽">
-<meta property="og:description" content="Oumei.tat 欧米伽提供全球网络加速、低延迟节点、流媒体访问优化、游戏加速与AI工具连接方案。">
-<meta property="og:url" content="https://oumei.lat/">
+<meta property="og:description" content="面向流媒体、AI工具、游戏低延迟与跨境办公的全球网络加速服务。">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="stylesheet" href="/assets/style.css">
 
+<style>
+/* Homepage rich layer: only affects index.html */
+.hero-rich{
+  padding:64px 0 30px;
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  gap:34px;
+  align-items:center;
+}
+.hero-title{
+  font-size:clamp(40px,6vw,72px);
+  line-height:1.05;
+  letter-spacing:-.055em;
+  margin:16px 0 18px;
+}
+.hero-title span{
+  background:linear-gradient(90deg,#fff 0%,#dbeafe 38%,#7dd3fc 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero-sub{
+  font-size:clamp(17px,2.1vw,21px);
+  color:var(--muted);
+  max-width:760px;
+  margin:0 0 24px;
+}
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:26px 0 16px;
+}
+.hero-points{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  color:#9fb6dc;
+  font-size:14px;
+}
+.hero-panel{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  padding:24px;
+  background:
+    radial-gradient(circle at 22% 0,rgba(96,165,250,.28),transparent 36%),
+    linear-gradient(180deg,rgba(17,29,53,.86),rgba(8,16,31,.78));
+  border:1px solid rgba(125,211,252,.20);
+  box-shadow:var(--shadow);
+}
+.hero-panel:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:radial-gradient(circle at 80% 16%,rgba(125,211,252,.14),transparent 32%);
+  pointer-events:none;
+}
+.panel-inner{position:relative;z-index:1}
+.status-line{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:14px 16px;border-radius:18px;background:rgba(5,12,25,.56);
+  border:1px solid rgba(255,255,255,.10);margin-bottom:14px
+}
+.live-dot{display:inline-flex;align-items:center;gap:8px;color:#c8f9df;font-weight:800}
+.live-dot i{width:9px;height:9px;border-radius:999px;background:var(--green);box-shadow:0 0 0 7px rgba(53,211,153,.10)}
+.route-map{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:12px;
+  align-items:center;
+  margin:16px 0;
+}
+.route-node{
+  border:1px solid rgba(125,211,252,.18);
+  background:#0d1931;
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+}
+.route-node strong{display:block;font-size:24px}
+.route-node span{display:block;color:var(--muted2);font-size:13px}
+.route-arrow{font-size:24px;color:var(--brand2)}
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+.metric{
+  border-radius:18px;
+  padding:15px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.08);
+}
+.metric b{display:block;font-size:24px;color:#fff}
+.metric span{color:var(--muted2);font-size:12px}
+.section{padding:52px 0}
+.section-head{max-width:760px;margin-bottom:24px}
+.section-head p{color:var(--muted);font-size:17px;margin:0}
+.eyebrow{
+  color:var(--brand2);
+  font-weight:900;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.feature-card .icon,.scenario-card .icon{
+  width:46px;height:46px;border-radius:16px;
+  display:grid;place-items:center;
+  background:rgba(79,140,255,.15);
+  border:1px solid rgba(125,211,252,.24);
+  font-size:22px;
+  margin-bottom:12px;
+}
+.plan-card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+.plan-tag{
+  width:max-content;
+  padding:5px 11px;
+  border-radius:999px;
+  background:rgba(246,196,83,.13);
+  border:1px solid rgba(246,196,83,.26);
+  color:#ffe5a6;
+  font-weight:900;
+  font-size:12px;
+  margin-bottom:10px;
+}
+.price{
+  font-size:44px;
+  line-height:1;
+  font-weight:950;
+  letter-spacing:-.04em;
+  color:#fff;
+  margin:8px 0 6px;
+}
+.price small{font-size:17px;color:var(--muted);font-weight:750}
+.spec-list{padding-left:0;list-style:none;margin:16px 0 22px}
+.spec-list li{
+  display:flex;
+  gap:10px;
+  margin:9px 0;
+  color:var(--muted);
+}
+.spec-list li:before{content:"✓";color:var(--green);font-weight:950}
+.blog-card{
+  display:block;
+  min-height:100%;
+}
+.blog-card .meta{margin-bottom:8px}
+.flow{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  counter-reset:flow;
+}
+.flow-step{
+  counter-increment:flow;
+  position:relative;
+}
+.flow-step:before{
+  content:counter(flow);
+  width:34px;height:34px;border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,#2563eb,#60a5fa);
+  color:#fff;font-weight:950;
+  margin-bottom:12px;
+}
+.compare-table{overflow-x:auto}
+.faq-mini details{
+  background:rgba(17,29,53,.68);
+  border:1px solid rgba(125,211,252,.16);
+  border-radius:18px;
+  padding:15px 18px;
+  margin:10px 0;
+}
+.faq-mini summary{font-weight:900;cursor:pointer}
+.faq-mini p{margin:10px 0 0}
+.cta-rich{
+  text-align:center;
+  padding:46px 24px;
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 50% -20%,rgba(96,165,250,.28),transparent 38%),
+    linear-gradient(145deg,#101d36,#07101f);
+  border:1px solid rgba(125,211,252,.22);
+  box-shadow:var(--shadow);
+}
+.cta-rich p{
+  max-width:760px;
+  margin:0 auto 22px;
+  color:var(--muted);
+}
+@media(max-width:900px){
+  .hero-rich{grid-template-columns:1fr;padding-top:42px}
+  .flow{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .metrics,.route-map,.flow{grid-template-columns:1fr}
+  .route-arrow{transform:rotate(90deg);text-align:center}
+  .hero-actions .btn{width:100%}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://yourdomain.com/#organization",
+      "name":"Oumei.tat 欧米伽",
+      "url":"https://yourdomain.com/",
+      "description":"全球网络加速与低延迟跨境连接服务。"
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://yourdomain.com/#website",
+      "url":"https://yourdomain.com/",
+      "name":"Oumei.tat 欧米伽",
+      "publisher":{"@id":"https://yourdomain.com/#organization"},
+      "inLanguage":"zh-CN"
+    },
+    {
+      "@type":"Service",
+      "@id":"https://yourdomain.com/#service",
+      "name":"全球网络加速服务",
+      "provider":{"@id":"https://yourdomain.com/#organization"},
+      "areaServed":"Worldwide",
+      "serviceType":"Network acceleration service",
+      "description":"提供跨境低延迟网络优化、多端客户端连接、流媒体访问优化、游戏低延迟与AI工具连接方案。",
+      "offers":{
+        "@type":"OfferCatalog",
+        "name":"Oumei.tat 网络加速套餐",
+        "itemListElement":[
+          {"@type":"Offer","name":"标准弹性计划","price":"12","priceCurrency":"CNY"},
+          {"@type":"Offer","name":"旗舰性价比计划","price":"58","priceCurrency":"CNY"},
+          {"@type":"Offer","name":"弹性无期包","price":"75","priceCurrency":"CNY"}
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
+
 <body>
-<header class="nav"><div class="wrap">
-<a class="brand" href="/">Oumei.tat 欧米伽</a>
-<nav class="links">
-<a href="/">首页</a><a href="/pricing.html">套餐</a><a href="/faq.html">FAQ</a><a href="/status.html">状态</a><a href="/blog/">Blog</a>
-</nav>
-<div><a class="btn btn-secondary" href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">登录</a> <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">注册</a></div>
-</div></header>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">Oumei.tat 欧米伽</a>
+    <nav class="links">
+      <a href="#plans">套餐</a>
+      <a href="#scenarios">场景</a>
+      <a href="#guides">教程</a>
+      <a href="/pricing.html">价格</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/status.html">状态</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <div>
+      <a class="btn btn-secondary" href="https://lucky.abc2028.xyz/#/login" target="_blank" rel="noopener">登录</a>
+      <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">注册</a>
+    </div>
+  </div>
+</header>
+
 <main class="wrap">
+  <section class="hero-rich">
+    <div>
+      <span class="kicker">Global Network Acceleration</span>
+      <h1 class="hero-title"><span>全球网络加速服务</span><br>稳定低延迟跨境连接方案</h1>
+      <p class="hero-sub">
+        Oumei.tat 欧米伽面向流媒体、ChatGPT 与 AI 工具、游戏低延迟、远程办公等场景，提供多端可用、套餐灵活、入口清晰的网络连接优化方案。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">凭受邀码注册</a>
+        <a class="btn btn-secondary" href="/pricing.html">查看套餐价格</a>
+        <a class="btn btn-secondary" href="/blog/">阅读使用教程</a>
+      </div>
+      <div class="hero-points">
+        <span>✓ 月付 / 年付 / 按量包</span>
+        <span>✓ Windows / Android / iOS / macOS</span>
+        <span>✓ 状态页与备用入口</span>
+      </div>
+    </div>
 
-<section class="hero">
-<span class="kicker">SEO Auto Traffic System 2.0</span>
-<h1>全球网络加速服务与低延迟跨境连接方案</h1>
-<p>面向流媒体、AI工具、游戏低延迟和跨境办公场景，使用静态SEO站承接Google/Bing自然搜索，再导流到XBoard完成注册和购买。</p>
-<p><a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">受邀注册</a> <a class="btn btn-secondary" href="/pricing.html">查看套餐</a></p>
-</section>
-<section class="grid">
-<div class="card"><h2>套餐转化</h2><p>通过 pricing.html 承接价格型搜索词。</p><a href="/pricing.html">查看套餐 →</a></div>
-<div class="card"><h2>FAQ长尾</h2><p>通过 faq.html 承接疑问型搜索词。</p><a href="/faq.html">查看FAQ →</a></div>
-<div class="card"><h2>Blog流量</h2><p>通过 /blog/ 承接问题型搜索词。</p><a href="/blog/">查看Blog →</a></div>
-</section>
-<section class="card"><h2>热门教程</h2>
-<ul>
-<li><a href="/blog/vpn-alternative.html">VPN替代方案：如何选择更稳定的网络加速方式</a></li>
-<li><a href="/blog/netflix.html">Netflix无法播放/卡顿解决方案</a></li>
-<li><a href="/blog/chatgpt.html">ChatGPT网络错误解决方案</a></li>
-<li><a href="/blog/game-latency.html">游戏延迟高怎么办</a></li>
-</ul>
-</section>
+    <aside class="hero-panel">
+      <div class="panel-inner">
+        <div class="status-line">
+          <strong>服务状态</strong>
+          <span class="live-dot"><i></i> 稳定运行</span>
+        </div>
+        <div class="route-map">
+          <div class="route-node"><strong>CN</strong><span>本地终端</span></div>
+          <div class="route-arrow">→</div>
+          <div class="route-node"><strong>Global</strong><span>优化节点</span></div>
+        </div>
+        <p class="meta">通过多区域节点、线路切换与订阅管理，改善跨境访问中的拥堵、延迟和连接不稳定问题。</p>
+        <div class="metrics">
+          <div class="metric"><b>30+</b><span>拓扑节点</span></div>
+          <div class="metric"><b>4端</b><span>客户端入口</span></div>
+          <div class="metric"><b>24h</b><span>体验保障</span></div>
+        </div>
+      </div>
+    </aside>
+  </section>
 
+  <section class="section" id="scenarios">
+    <div class="section-head">
+      <span class="eyebrow">Use Cases</span>
+      <h2>覆盖高频网络使用场景</h2>
+      <p>首页负责承接核心词，Blog负责承接问题词，Pricing负责承接转化词，FAQ负责解决购买前疑问。</p>
+    </div>
+
+    <div class="grid">
+      <article class="card scenario-card">
+        <div class="icon">🎬</div>
+        <h3>流媒体访问优化</h3>
+        <p>适合 Netflix、YouTube 等视频平台访问体验优化，减少缓冲、卡顿和加载慢的问题。</p>
+        <a href="/blog/netflix.html">查看Netflix教程 →</a>
+      </article>
+      <article class="card scenario-card">
+        <div class="icon">🤖</div>
+        <h3>ChatGPT与AI工具</h3>
+        <p>适合 AI 工具连接不稳定、页面加载失败、回答中断等网络问题的排查与优化。</p>
+        <a href="/blog/chatgpt.html">查看ChatGPT教程 →</a>
+      </article>
+      <article class="card scenario-card">
+        <div class="icon">🎮</div>
+        <h3>游戏低延迟</h3>
+        <p>针对跨境游戏、实时通信和远程连接场景，优先考虑线路稳定性和延迟波动。</p>
+        <a href="/blog/game-latency.html">查看游戏延迟教程 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="plans">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2>三类套餐，适合不同使用频率</h2>
+      <p>短期体验选月付，长期稳定选年付，低频备用选按量包。</p>
+    </div>
+
+    <div class="grid">
+      <article class="card plan-card">
+        <span class="plan-tag">灵活月付</span>
+        <h3>标准弹性计划</h3>
+        <div class="price">12 <small>元/月</small></div>
+        <ul class="spec-list">
+          <li>150GB/月高速额度</li>
+          <li>适合短期体验</li>
+          <li>多端客户端入口</li>
+        </ul>
+        <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">注册购买</a>
+      </article>
+
+      <article class="card plan-card">
+        <span class="plan-tag">年度爆款</span>
+        <h3>旗舰性价比计划</h3>
+        <div class="price">58 <small>元/年</small></div>
+        <ul class="spec-list">
+          <li>200GB/月高速额度</li>
+          <li>适合长期稳定使用</li>
+          <li>综合性价比更高</li>
+        </ul>
+        <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">受邀注册</a>
+      </article>
+
+      <article class="card plan-card">
+        <span class="plan-tag">按量备用</span>
+        <h3>弹性无期包</h3>
+        <div class="price">75 <small>元/次</small></div>
+        <ul class="spec-list">
+          <li>500GB总量</li>
+          <li>用完为止</li>
+          <li>适合低频备用</li>
+        </ul>
+        <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">购买按量包</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">How it Works</span>
+      <h2>从搜索访问到完成注册的转化路径</h2>
+      <p>这套结构不是单页广告，而是 SEO 内容站 + XBoard 面板的组合漏斗。</p>
+    </div>
+    <div class="flow">
+      <article class="card flow-step"><h3>搜索进入</h3><p>用户通过 Google/Bing 搜索 VPN替代、Netflix卡顿、ChatGPT网络错误等问题进入Blog。</p></article>
+      <article class="card flow-step"><h3>阅读教程</h3><p>Blog解释原因与排查方法，并通过内链导向 FAQ、状态页和价格页。</p></article>
+      <article class="card flow-step"><h3>选择套餐</h3><p>Pricing 页面承接价格型关键词，帮助用户选择月付、年付或按量包。</p></article>
+      <article class="card flow-step"><h3>XBoard转化</h3><p>最终跳转到 XBoard 完成注册、购买、订阅导入和客户端使用。</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="guides">
+    <div class="section-head">
+      <span class="eyebrow">SEO Guides</span>
+      <h2>热门网络优化教程</h2>
+      <p>这些页面负责承接长尾搜索流量，是自然流量系统真正起量的核心。</p>
+    </div>
+
+    <div class="grid">
+      <a class="card blog-card" href="/blog/vpn-alternative.html">
+        <p class="meta">VPN替代 / 网络加速器</p>
+        <h3>VPN替代方案：如何选择更稳定的网络加速方式</h3>
+        <p>解释为什么用户会寻找VPN替代方案，以及如何选择稳定低延迟的网络加速服务。</p>
+      </a>
+      <a class="card blog-card" href="/blog/netflix.html">
+        <p class="meta">Netflix / 流媒体</p>
+        <h3>Netflix无法播放或卡顿怎么办？</h3>
+        <p>从节点、DNS、订阅更新和线路稳定性角度排查视频缓冲慢的问题。</p>
+      </a>
+      <a class="card blog-card" href="/blog/chatgpt.html">
+        <p class="meta">ChatGPT / AI工具</p>
+        <h3>ChatGPT网络错误解决方案</h3>
+        <p>排查AI工具无法连接、页面加载失败、回答中断和代理模式问题。</p>
+      </a>
+      <a class="card blog-card" href="/blog/game-latency.html">
+        <p class="meta">游戏 / 低延迟</p>
+        <h3>游戏延迟高怎么办？</h3>
+        <p>降低Ping、减少抖动、切换节点和选择目标地区线路的实用方法。</p>
+      </a>
+      <a class="card blog-card" href="/blog/youtube-buffering.html">
+        <p class="meta">YouTube / 视频加载</p>
+        <h3>YouTube视频缓冲慢怎么办？</h3>
+        <p>针对视频加载慢、清晰度下降和卡顿的网络优化方法。</p>
+      </a>
+      <a class="card blog-card" href="/blog/google-not-working.html">
+        <p class="meta">Google / 搜索失败</p>
+        <h3>Google打不开怎么办？</h3>
+        <p>检查代理、DNS、浏览器缓存和节点状态的排查路径。</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">Comparison</span>
+      <h2>套餐快速对比</h2>
+      <p>对比表可以增强用户决策，也能让搜索引擎更清楚理解价格和套餐信息。</p>
+    </div>
+    <div class="card compare-table">
+      <table>
+        <thead>
+          <tr><th>套餐</th><th>价格</th><th>额度</th><th>适合人群</th><th>入口</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>标准弹性计划</td><td>12元/月</td><td>150GB/月</td><td>短期体验、轻量用户</td><td><a href="/pricing.html">查看</a></td></tr>
+          <tr><td>旗舰性价比计划</td><td>58元/年</td><td>200GB/月</td><td>长期使用、预算敏感</td><td><a href="/pricing.html">查看</a></td></tr>
+          <tr><td>弹性无期包</td><td>75元/次</td><td>500GB总量</td><td>低频备用、不想续费</td><td><a href="/pricing.html">查看</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>新用户常见问题</h2>
+      <p>更完整的问题可以进入 FAQ 页面查看。</p>
+    </div>
+    <div class="faq-mini">
+      <details open>
+        <summary>购买后如何使用？</summary>
+        <p>进入XBoard后台复制订阅链接，根据设备选择客户端，导入订阅并更新节点后即可连接。</p>
+      </details>
+      <details>
+        <summary>应该选哪个套餐？</summary>
+        <p>短期体验选月付，长期使用选年付，低频备用选按量包。</p>
+      </details>
+      <details>
+        <summary>节点延迟高怎么办？</summary>
+        <p>可以切换节点、更新订阅、避开高峰时段，并查看状态页确认是否有维护公告。</p>
+      </details>
+    </div>
+    <p><a class="btn btn-secondary" href="/faq.html">查看完整FAQ</a> <a class="btn btn-secondary" href="/status.html">查看节点状态</a></p>
+  </section>
+
+  <section class="section">
+    <div class="cta-rich">
+      <span class="kicker">Start Now</span>
+      <h2>从SEO首页进入，跳转XBoard完成注册与购买</h2>
+      <p>这个首页负责承接自然搜索用户，XBoard负责账户、套餐、支付、订阅和客户端使用。两层分离后，既能提升搜索收录，又不影响原有面板业务。</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn btn-primary" href="https://lucky.abc2028.xyz/#/register?code=l5ZqIoGQ" target="_blank" rel="noopener">持受邀码注册</a>
+        <a class="btn btn-secondary" href="/pricing.html">查看套餐价格</a>
+        <a class="btn btn-secondary" href="/blog/">阅读教程</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap">
-<p>© 2026 Oumei.tat 欧米伽. SEO静态站负责自然搜索引流，注册、支付与订阅管理由XBoard面板完成。</p>
-</div></footer>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Oumei.tat 欧米伽. SEO静态站负责自然搜索引流，注册、支付与订阅管理由XBoard面板完成。</p>
+    <p>
+      <a href="/">首页</a> ·
+      <a href="/pricing.html">套餐价格</a> ·
+      <a href="/faq.html">FAQ</a> ·
+      <a href="/status.html">节点状态</a> ·
+      <a href="/blog/">Blog</a> ·
+      <a href="/sitemap.xml">Sitemap</a>
+    </p>
+  </div>
+</footer>
+
 <script defer src="https://stats.oumiga.xyz/script.js" data-website-id="bf204d0c-8fe3-457a-8d71-cf1d48a3a309"></script>
 </body>
 </html>
