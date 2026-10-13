@@ -37,6 +37,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://oumei.lat/privacy.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oumei.lat/terms.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oumei.lat/disclaimer.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://oumei.lat/blog/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>daily</changefreq>
